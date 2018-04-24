@@ -13,6 +13,8 @@ description = 'Python tools for earth science and machine learning'
 version = '0.0.1'
 release = '0.0.1'
 
+nbbuild_cell_timeout = 10000
+
 html_static_path += ['_static']
 html_theme = 'sphinx_ioam_theme'
 # logo file etc should be in html_static_path, e.g. _static
