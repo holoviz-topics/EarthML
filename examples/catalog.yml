@@ -1,0 +1,32 @@
+plugins:
+  source:
+    - module: earthml
+sources:
+  l5:
+    description: Images contain Landsat Surface Reflectance Level-2 Science Product L5.
+    driver: rasterio
+    cache:
+      - argkey: urlpath
+        regex: 'earth-data/landsat'
+        type: file
+    args:
+      urlpath: 's3://earth-data/landsat/LT05_L1TP_042033_19881022_20161001_01_T1_sr_band*.tif'
+      chunks:
+        band: 1
+        x: 256
+        y: 256
+      concat_dim: concat_dim
+  l8:
+    description: Images contain Landsat Surface Reflectance Level-2 Science Product L5.
+    driver: rasterio
+    cache:
+      - argkey: urlpath
+        regex: 'earth-data/landsat'
+        type: file
+    args:
+      urlpath: 's3://earth-data/landsat/LC08_L1TP_042033_20171022_20171107_01_T1_sr_band*.tif'
+      chunks:
+        band: 1
+        x: 256
+        y: 256
+      concat_dim: concat_dim
