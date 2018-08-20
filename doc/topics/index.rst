@@ -13,5 +13,14 @@ Detailed documentation is contained in the `User Guide
 Contents:
 
 * `landsat_spectral_clustering <landsat_spectral_clustering.html>`_
-   Unsupervised clusting of LANDSAT data
+   Unsupervised clustering of LANDSAT data
 
+* `Carbon_Flux <Carbon_Flux.html>`_
+   Visualizing and estimating global carbon flux from fluxnet and RSIF data.
+
+* `Walker_Lake <Walker_Lake.html>`_
+   Visualizing the change in the NDVI over time for a great saline lake. 
+
+* `landsat_classifier_ensemble <landsat_classifier_ensemble.html>`_
+   A comparison of scikit learn classifiers using LANDSAT 5 and LANDSAT 8 data sets.
+   
