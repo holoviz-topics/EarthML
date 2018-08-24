@@ -1,6 +1,3 @@
-plugins:
-  source:
-    - module: earthml
 sources:
   l5:
     description: Images contain Landsat Surface Reflectance Level-2 Science Product L5.
@@ -16,6 +13,7 @@ sources:
         x: 256
         y: 256
       concat_dim: concat_dim
+      storage_options: {'anon': True}
   l8:
     description: Images contain Landsat Surface Reflectance Level-2 Science Product L5.
     driver: rasterio
@@ -30,3 +28,34 @@ sources:
         x: 256
         y: 256
       concat_dim: concat_dim
+      storage_options: {'anon': True}
+  landsat_sample:
+    description: Sample Landsat image.
+    driver: rasterio
+    cache:
+      - argkey: urlpath
+        regex: 'earth-data'
+        type: file
+    args:
+      urlpath: 's3://earth-data/landsat-sample.tiff'
+      chunks:
+        band: 1
+        x: 256
+        y: 256
+      concat_dim: concat_dim
+      storage_options: {'anon': True}
+  midwest_mosaic:
+    description: Pangeo Landsat Mosaics - Midwest
+    driver: rasterio
+    cache:
+      - argkey: urlpath
+        regex: 'earth-data'
+        type: file
+    args:
+      urlpath: 's3://earth-data/Midwest_Mosaic.tif'
+      chunks:
+        band: 1
+        x: 256
+        y: 256
+      concat_dim: concat_dim
+      storage_options: {'anon': True}
