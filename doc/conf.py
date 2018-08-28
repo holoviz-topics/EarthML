@@ -18,10 +18,11 @@ nbbuild_cell_timeout = 10000
 html_static_path += ['_static']
 html_theme = 'sphinx_ioam_theme'
 # logo file etc should be in html_static_path, e.g. _static
+
+
 html_theme_options = {
-#    'custom_css':'bettercolors.css',
-#    'logo':'amazinglogo.png',
-#    'favicon':'amazingfavicon.ico'
+    'logo':'logo.png',
+    'favicon':'favicon.ico'
 }
 
 _NAV =  (
