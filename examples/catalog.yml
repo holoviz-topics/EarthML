@@ -12,7 +12,7 @@ sources:
         band: 1
         x: 256
         y: 256
-      concat_dim: concat_dim
+      concat_dim: band
       storage_options: {'anon': True}
   l8:
     description: Images contain Landsat Surface Reflectance Level-2 Science Product L5.
@@ -27,7 +27,7 @@ sources:
         band: 1
         x: 256
         y: 256
-      concat_dim: concat_dim
+      concat_dim: band
       storage_options: {'anon': True}
   landsat_sample:
     description: Sample Landsat image.
