@@ -7,13 +7,22 @@ sources:
         regex: 'earth-data/landsat'
         type: file
     args:
-      urlpath: 's3://earth-data/landsat/LT05_L1TP_042033_19881022_20161001_01_T1_sr_band*.tif'
+      urlpath: 's3://earth-data/landsat/LT05_L1TP_042033_19881022_20161001_01_T1_sr_band{band:d}.tif'
       chunks:
         band: 1
         x: 256
         y: 256
       concat_dim: band
       storage_options: {'anon': True}
+    metadata:
+      plots:
+        band_image:
+          kind: 'image'
+          x: 'x'
+          y: 'y'
+          groupby: 'band'
+          datashade: True
+          width: 400
   l8:
     description: Images contain Landsat Surface Reflectance Level-2 Science Product L5.
     driver: rasterio
