@@ -29,6 +29,11 @@ in this domain:
    -  `Dask <http://dask.pydata.org/en/latest/>`_: Parallelism and performance at scale.
 
 
+A major goal of this website is to demonstrate examples of how Python
+tools may be used to perform machine learning tasks in the earth
+sciences. A number of such examples are available in the `Topics
+<topics>`_ section:
+
 .. raw:: html
 
    <div>
@@ -42,14 +47,13 @@ in this domain:
    </div>
    </div>
 
-   
-We recommend the `Getting Started Guide <getting_started>`_ to learn
-the basic concepts and start using Project as quickly as possible.
 
-The `User Guide <user_guide>`_ goes into key concepts more deeply when
-you are ready for further study.
-
-The `API <Reference_Manual>`_ is the definitive guide to each EarthML
+In addition to these examples, the `Getting Started Guide <getting_started>`_
+aims to quickly introduce the essential concepts to help the reader
+understand how they can start using these tools to solve their own
+problems. The `User Guide <user_guide>`_ then offers a more in depth
+overview of these concepts when you are ready for further study. Lastly,
+the `API <Reference_Manual>`_ is the definitive guide to each EarthML
 object.
 
 Please feel free to report `issues
