@@ -78,34 +78,16 @@ sources:
       row:
         description: landsat row
         type: int
-      pid:
+      product_id:
         description: landsat file id
         type: str
       band:
         description: band
         type: int
     args: 
-      urlpath: https://storage.googleapis.com/gcp-public-data-landsat/LC08/01/{{ '%03d' % path }}/{{ '%03d' % row }}/{{ pid }}/{{ pid }}_B{{ band }}.TIF
+      urlpath: https://storage.googleapis.com/gcp-public-data-landsat/LC08/01/{{ '%03d' % path }}/{{ '%03d' % row }}/{{ product_id }}/{{ product_id }}_B{{ band }}.TIF
       chunks:
         band: 1
         x: 256
         y: 256
-  google_landsat_metadata:
-    driver: csv
-    parameters:
-      path:
-        description: landsat path
-        type: int
-      row:
-        description: landsat row
-        type: int
-      pid:
-        description: landsat file id
-        type: str
-    args: 
-      urlpath: https://storage.googleapis.com/gcp-public-data-landsat/LC08/01/{{ '%03d' % path }}/{{ '%03d' % row }}/{{ pid }}/{{ pid }}_MTL.txt
-      csv_kwargs:
-        sep: '='
-        header: null
-        names: ['index', 'value']
-        skiprows: 2
+
