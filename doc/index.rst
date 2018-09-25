@@ -33,12 +33,12 @@ in this domain:
 
    <div>
    <div >
-     <a href="http://holoviews.org/gallery/demos/bokeh/iris_splom_example.html">
-       <img src="http://earthml.pyviz.org/_static/collage/walker_lake.png" width='20%'>    </img> </a>
-     <a href="http://holoviews.org/getting_started/Gridded_Datasets.html">
-       <img src="https://assets.holoviews.org/collage/cells.png" width='22%'> </img>  </a>
-     <a href="http://holoviews.org/gallery/demos/bokeh/scatter_economic.html">
-       <img src="http://holoviews.org/_images/scatter_economic.png" width='43%'> </img>    </a>
+     <a href="http://earthml.pyviz.org/topics/trees.html">
+       <img src="_static/collage/trees.png" width='30%'>    </img> </a>
+     <a href="http://earthml.pyviz.org/topics/Walker_Lake.html">
+       <img src="_static/collage/walker.png" width='30%'> </img>  </a>
+     <a href="http://earthml.pyviz.org/topics/landsat_spectral_clustering.html">
+       <img src="_static/collage/cluster.png" width='30%'> </img>    </a>
    </div>
    </div>
 
@@ -57,6 +57,7 @@ Please feel free to report `issues
 <https://github.com/pyviz-topics/EarthML/>`_.
 
 
+------------
 Installation
 ------------
 
