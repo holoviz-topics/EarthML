@@ -14,9 +14,11 @@ various general-purpose open-source Python packages like `Bokeh
 
 * `Alignment and Preprocessing <03_Alignment_and_Preprocessing.html>`_: How to prepare your data for the machine learning pipeline.
 
-* `Machine Learning <04_Machine_Learning.html>`_: Specifying a `scikit-learn <http://scikit-learn.org/stable/index.html>`_ pipeline to ingest the prepared training data.
+* `Resampling <04_Resampling.html>`_: How to resample large datasets.
 
-* `Data Visualization <05_Data_Visualization.html>`_: How to visualize your data throughout the workflow, starting from data ingestion to the final machine learning product.
+* `Machine Learning <05_Machine_Learning.html>`_: Specifying a `scikit-learn <http://scikit-learn.org/stable/index.html>`_ pipeline to ingest the prepared training data.
+
+* `Data Visualization <06_Data_Visualization.html>`_: How to visualize your data throughout the workflow, starting from data ingestion to the final machine learning product.
 
 
 .. toctree::
@@ -27,5 +29,6 @@ various general-purpose open-source Python packages like `Bokeh
     Introduction and Workflow <01_Introduction_and_Workflow>
     Data Ingestion with Intake <02_Data_Ingestion_with_Intake>
     Alignment and Preprocessing <03_Alignment_and_Preprocessing>
-    Machine Learning <04_Machine_Learning>
-    Data Visualization <05_Data_Visualization>
+    Resampling <04_Resampling>
+    Machine Learning <05_Machine_Learning>
+    Data Visualization <06_Data_Visualization>
