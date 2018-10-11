@@ -1,0 +1,19 @@
+name: earthml
+channels:
+  - intake
+  - pyviz
+  - pyviz/label/dev
+  - conda-forge
+  - defaults
+dependencies:
+  - pyviz=0.9.13a0=py_0
+  - dask-ml=0.8.0=py36h470a237_0
+  - geopandas=0.4.0=py_1
+  - s3fs=0.1.6=py_0
+  - zarr=2.2.0=py_1
+  - tqdm=4.26.0=py36h28b3542_0
+  - intake=0.2.6=py_1
+  - intake-xarray=0.2.3=py_0  
+  - geoviews=1.5.4a13=py_0
+  - pip:
+    - rio-toa==0.3.0

@@ -22,7 +22,8 @@ html_theme = 'sphinx_ioam_theme'
 
 html_theme_options = {
     'logo':'logo.png',
-    'favicon':'favicon.ico'
+    'favicon':'favicon.ico',
+    'custom_css':'site.css'
 }
 
 _NAV =  (

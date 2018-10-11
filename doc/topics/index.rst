@@ -23,4 +23,7 @@ Contents:
 
 * `landsat_classifier_ensemble <landsat_classifier_ensemble.html>`_
    A comparison of scikit learn classifiers using LANDSAT 5 and LANDSAT 8 data sets.
-   
+
+* `Heat_and_Trees <Heat_and_Trees.html>`_
+   Analysis of how trees affect heat distribution in urban areas.
+
