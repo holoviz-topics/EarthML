@@ -15,8 +15,9 @@ Contents:
 * `landsat_spectral_clustering <landsat_spectral_clustering.html>`_
    Unsupervised clustering of LANDSAT data
 
-* `Carbon_Flux <Carbon_Flux.html>`_
-   Visualizing and estimating global carbon flux from fluxnet and RSIF data.
+..
+   * `Carbon_Flux <Carbon_Flux.html>`_
+      Visualizing and estimating global carbon flux from fluxnet and RSIF data.
 
 * `Walker_Lake <Walker_Lake.html>`_
    Visualizing the change in the NDVI over time for a great saline lake. 
