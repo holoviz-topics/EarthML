@@ -54,7 +54,7 @@ code](https://github.com/pyviz-topics/EarthML/).
 Installation
 ============
 
-Step 1: Install a [Miniconda](http://conda.pydata.org/miniconda.html) (or [Anaconda](https://www.continuum.io/downloads)) environment
+Step 1: Install a [Miniconda](http://conda.pydata.org/miniconda.html) (or [Anaconda](https://docs.continuum.io/anaconda/install)) environment
 -------------------------------------------------------------------------------------------------------------------------------------
 
 Any Linux, Mac OS X, or Windows computer with a web browser (preferably
