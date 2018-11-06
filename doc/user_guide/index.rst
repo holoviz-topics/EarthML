@@ -1,12 +1,7 @@
-**********
-User Guide
-**********
+EarthML Tutorial
+****************
 
-Most of the functionality developed in the EarthML project is in the
-various general-purpose open-source Python packages like `Bokeh
-<http://bokeh.pydata.org>`_, `HoloViews <http://holoviews.org>`_, and
-`Datashader <http://datashader.org>`_:
-
+The EarthML tutorial takes you through the various stages involved in using Python open-source tools to work with machine-learning and related data analysis tools for climate and other Earth science topics:
 
 * `Introduction and Workflow <01_Introduction_and_Workflow.html>`_: Overview of the recommended workflow.
 
