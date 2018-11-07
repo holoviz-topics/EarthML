@@ -27,10 +27,9 @@ html_theme_options = {
 }
 
 _NAV =  (
-    ('Getting Started', 'getting_started/index'),
-    ('User Guide', 'user_guide/index'),
-    ('Gallery', 'gallery/index'),
-    ('API', 'Reference_Manual/index'),
+    ('Introduction', 'index'),
+    ('Tutorial', 'tutorial/index'),
+    ('Topics', 'topics/index'),
     ('FAQ', 'FAQ'),
     ('About', 'about')
 )
@@ -39,7 +38,6 @@ html_context.update({
     'PROJECT': project,
     'DESCRIPTION': description,
     'AUTHOR': authors,
-    # will work without this - for canonical (so can ignore when building locally or test deploying)
     'WEBSITE_SERVER': 'https://pyviz-topics.github.io/EarthML/',
     'VERSION': version,
     'NAV': _NAV,

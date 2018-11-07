@@ -39,13 +39,9 @@ sciences. A number of such examples are available in the
 </div>
 </div>
 
-In addition to these examples, the [Getting Started
-Guide](getting_started) aims to quickly introduce the essential concepts
-to help the reader understand how they can start using these tools to
-solve their own problems. The [User Guide](user_guide) then offers a
-more in depth overview of these concepts when you are ready for further
-study. Lastly, the [API](Reference_Manual) is the definitive guide to
-each EarthML object.
+In addition to these examples, the [Tutorial](tutorial) offers an
+in depth overview of these concepts when you are ready for further
+study.
 
 Please feel free to report
 [issues](https://github.com/pyviz-topics/EarthML/issues) or [contribute
