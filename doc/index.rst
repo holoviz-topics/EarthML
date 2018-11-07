@@ -113,4 +113,5 @@ Step 4: Run the notebook server
    Introduction <self>
    Tutorial <tutorial/index>
    Topics <topics/index>
-   FAQ
+   FAQ <FAQ>
+   About <about>
