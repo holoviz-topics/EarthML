@@ -12,16 +12,15 @@ stages:
 
 jobs:
   include:
-    ########## TEST USER INSTALL ##########
+    ########## SMOKE TESTING ##########
     - &default
       stage: test
-      before_install: true
-      install:
-        #####
-        # install doit/pyctdev and use to install miniconda...
+      env: DESC="dev test"
+      before_install:
         - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
         - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
         - conda config --set always_yes True
+      install:
         - conda env create -f environment.yml
         - conda activate earthml
 
@@ -29,13 +28,11 @@ jobs:
         - conda install $CHANS_DEV nbsmoke pytest
         - pytest --nbsmoke-run -k ".ipynb"  # this takes about 20 min locally
 
-    - <<: *default
-      <<: *_osx_config
-
     ########## DOCS ##########
 
     - <<: *default
       stage: doc
+      env: DESC="docs"
       script:
         - conda activate earthml
         - conda install $CHANS_DEV nbsite>=0.5.0 sphinx_ioam_theme
