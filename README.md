@@ -67,23 +67,20 @@ twice to get the very latest) to ensure you have the latest version:
     > conda update conda
     > conda update conda
 
-\[OPTIONAL\] If you want to keep things organized, you can then create a
-separate Conda environment to work in for this tutorial:
+Step 2: Clone the EarthML git repository
+----------------------------------------
 
-    > conda create -n pyviz-tutorial python=3.6
-    > source activate pyviz-tutorial
+    > git clone https://github.com/pyviz-topics/EarthML.git
+    > cd EarthML
 
-(omitting "source" if you are on Windows).
+Step 3: Install and activate the ``earthml`` environment
+--------------------------------------------------------
+    > conda env create -f environment.yml
+    > conda activate earthml
 
-Step 2: Install the `pyviz` environment
----------------------------------------
-
-    > conda install -c pyviz pyviz
-
-Step 3: Install additional dependencies
----------------------------------------
-
-    > pip install rio-toa
-    > conda install -c intake intake-xarray
+Step 4: Run the notebook server
+-------------------------------
+    > cd examples
+    > jupyter notebook
 
 </div>
