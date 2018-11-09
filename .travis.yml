@@ -1,0 +1,56 @@
+language: generic
+
+env:
+  global:
+    - PYENV_VERSION=3.6
+    - CHANS_DEV="-c pyviz/label/dev"
+
+stages:
+  - test
+  - name: doc
+    if: tag =~ ^v(\d+|\.)+[^a-z]\d+$ OR tag = website
+
+jobs:
+  include:
+    ########## TEST USER INSTALL ##########
+    - &default
+      stage: test
+      before_install: true
+      install:
+        #####
+        # install doit/pyctdev and use to install miniconda...
+        - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
+        - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
+        - conda config --set always_yes True
+        - conda env create -f environment.yml
+        - conda activate earthml
+
+      script:
+        - conda install $CHANS_DEV nbsmoke pytest
+        - pytest --nbsmoke-run -k ".ipynb"  # this takes about 20 min locally
+
+    - <<: *default
+      <<: *_osx_config
+
+    ########## DOCS ##########
+
+    - <<: *default
+      stage: doc
+      script:
+        - conda activate earthml
+        - conda install $CHANS_DEV nbsite>=0.5.0 sphinx_ioam_theme
+        - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --skip '.*Carbon_Flux.*' --nblink=bottom
+        - nbsite build --what=html --output=builtdocs
+
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        local_dir: ./builtdocs
+        fqdn: earthml.pyviz.org
+        on:
+          tags: true
+          all_branches: true
+
+notifications:
+  email: false

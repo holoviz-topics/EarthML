@@ -38,7 +38,7 @@ learning tasks in the Earth sciences, such as:
 
    <div>
    <div >
-     <a href="http://earthml.pyviz.org/topics/trees.html">
+     <a href="http://earthml.pyviz.org/topics/Heat_and_Trees.html">
        <img src="_static/collage/trees.png" width='30%'>    </img> </a>
      <a href="http://earthml.pyviz.org/topics/Walker_Lake.html">
        <img src="_static/collage/walker.png" width='30%'> </img>  </a>
