@@ -1,21 +1,21 @@
 name: earthml
 channels:
-  - pyviz/label/dev
-  - pyviz
   - conda-forge
-  - defaults
-  - intake
 dependencies:
-  - pyviz
+  - cartopy
+  - colorcet
+  - dask
   - dask-ml
+  - datashader
   - geopandas
-  - s3fs
-  - zarr
-  - tqdm
+  - pyviz/label/dev::geoviews
+  - pyviz/label/dev::holoviews
+  - pyviz/label/dev::hvplot
+  - intake
+  - intake-xarray
+  - numpy
+  - pandas
   - rasterio
-  - intake >=0.2.9
-  - intake-xarray >=0.2.4
-  - geoviews
-  - scikit-learn
+  - xarray
   - pip:
     - rio-toa
