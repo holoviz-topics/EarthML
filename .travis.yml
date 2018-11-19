@@ -22,7 +22,7 @@ jobs:
         - conda config --set always_yes True
       install:
         - conda env create -f environment.yml
-        - conda activate earthml
+        - source activate earthml
 
       script:
         - conda install $CHANS_DEV nbsmoke pytest
@@ -34,7 +34,7 @@ jobs:
       stage: doc
       env: DESC="docs"
       script:
-        - conda activate earthml
+        - source activate earthml
         - conda install $CHANS_DEV nbsite>=0.5.0 sphinx_ioam_theme
         - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --skip '.*Carbon_Flux.*' --nblink=bottom
         - nbsite build --what=html --output=builtdocs
