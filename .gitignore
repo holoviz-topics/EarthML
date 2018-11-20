@@ -105,7 +105,7 @@ ENV/
 earthml/.version
 .doit*
 
-.DS_Store
+*.DS_Store
 
 # nbsite
 # these files normally shouldn't be checked in as they should be
@@ -115,3 +115,9 @@ doc/**/*.ipynb
 doc/**/*.json
 # this dir contains the whole website and should not be checked in on master
 builtdocs/
+
+# dask
+*dask-worker-space*
+
+# pytest
+*.pytest_cache/*
