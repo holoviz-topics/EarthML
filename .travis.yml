@@ -1,9 +1,14 @@
 language: generic
 
+cache:
+  timeout: 300
+  directories:
+    - $HOME/miniconda
+
 env:
   global:
     - PYENV_VERSION=3.6
-    - CHANS_DEV="-c pyviz/label/dev -c conda-forge"
+    - CHANS_DEV="-c pyviz/label/dev"
 
 stages:
   - test
@@ -35,7 +40,7 @@ jobs:
       env: DESC="docs"
       script:
         - source activate earthml
-        - conda install $CHANS_DEV nbsite>=0.5.1 sphinx_ioam_theme
+        - conda install $CHANS_DEV nbsite==0.5.1 sphinx_ioam_theme
         - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --skip '.*Carbon_Flux.*' --nblink=bottom
         - nbsite build --what=html --output=builtdocs
 
