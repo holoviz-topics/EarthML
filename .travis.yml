@@ -3,7 +3,7 @@ language: generic
 env:
   global:
     - PYENV_VERSION=3.6
-    - CHANS_DEV="-c pyviz/label/dev"
+    - CHANS_DEV="-c pyviz/label/dev -c conda-forge"
 
 stages:
   - test
@@ -23,7 +23,6 @@ jobs:
       install:
         - conda env create -f environment.yml
         - source activate earthml
-
       script:
         - conda install $CHANS_DEV nbsmoke pytest
         - python before_test.py && mv test_catalog.yml examples/catalog.yml
@@ -36,7 +35,7 @@ jobs:
       env: DESC="docs"
       script:
         - source activate earthml
-        - conda install $CHANS_DEV nbsite>=0.5.0 sphinx_ioam_theme
+        - conda install $CHANS_DEV nbsite>=0.5.1 sphinx_ioam_theme
         - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --skip '.*Carbon_Flux.*' --nblink=bottom
         - nbsite build --what=html --output=builtdocs
 
