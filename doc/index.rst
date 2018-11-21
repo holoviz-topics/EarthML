@@ -38,11 +38,11 @@ learning tasks in the Earth sciences, such as:
 
    <div>
    <div >
-     <a href="http://earthml.pyviz.org/topics/Heat_and_Trees.html">
+     <a href="topics/Heat_and_Trees.html">
        <img src="_static/collage/trees.png" width='30%'>    </img> </a>
-     <a href="http://earthml.pyviz.org/topics/Walker_Lake.html">
+     <a href="topics/Walker_Lake.html">
        <img src="_static/collage/walker.png" width='30%'> </img>  </a>
-     <a href="http://earthml.pyviz.org/topics/landsat_spectral_clustering.html">
+     <a href="topics/Landsat_Spectral_Clustering.html">
        <img src="_static/collage/cluster.png" width='30%'> </img>    </a>
    </div>
    </div>
