@@ -5,36 +5,44 @@ Topics
 Examples of what can be done with EarthML.
 
 To learn how to use EarthML, see the `Tutorial
-<../tutorial/index>`_.
+<../tutorial/index.html>`_.
 
 Contents:
 
-* `Carbon Flux <Carbon_Flux>`_
+* `Carbon Flux <Carbon_Flux.html>`_
    Visualizing and estimating global carbon flux from fluxnet and RSIF data.
 
-* `Heat and Trees <Heat_and_Trees>`_
-.. figure:: ../_static/collage/cluster.png
-   :scale: 50 %
-   :alt: Analysis of how trees affect heat distribution
-
+* `Heat and Trees <Heat_and_Trees.html>`_
    Analysis of how trees affect heat distribution in urban areas.
 
-* `Walker Lake <Walker_Lake>`_
-.. figure:: ../_static/collage/cluster.png
-   :scale: 50 %
-   :alt: Visualizing the change in the NDVI over time
+   .. figure:: ../_static/collage/trees.png
+      :scale: 30 %
+      :alt: Analysis of how trees affect heat distribution
 
+
+* `Walker Lake <Walker_Lake.html>`_
    Visualizing the change in the NDVI over time for a great saline lake.
 
-* `Landsat Spectral Clusering <Landsat_Spectral_Clustering>`_
-.. figure:: ../_static/collage/cluster.png
-   :scale: 50 %
-   :alt: Unsupervised clustering of LANDSAT data
+   .. figure:: ../_static/collage/walker.png
+      :scale: 30 %
+      :alt: Visualizing the change in the NDVI over time
 
+
+* `Landsat Spectral Clusering <Landsat_Spectral_Clustering.html>`_
    Unsupervised clustering of LANDSAT data
 
-* `Landsat Classifier Ensemble <Landsat_Classifier_Ensemble>`_
+   .. figure:: ../_static/collage/cluster.png
+      :scale: 30 %
+      :alt: Unsupervised clustering of LANDSAT data
+
+
+* `Landsat Classifier Ensemble <Landsat_Classifier_Ensemble.html>`_
    A comparison of scikit learn classifiers using LANDSAT 5 and LANDSAT 8 data sets.
+
+   .. figure:: ../_static/collage/ensemble.png
+      :scale: 30 %
+      :alt:  A comparison of scikit learn classifiers
+
 
 .. toctree::
     :titlesonly:

@@ -27,6 +27,7 @@ in this domain:
       datasets into images for display in browsers.
    -  `XArray <http://xarray.pydata.org>`_: Processing gridded data structures.
    -  `Dask <http://dask.pydata.org/en/latest/>`_: Parallelism and performance at scale.
+   -  `Intake <https://intake.readthedocs.io>`_: Cleanly loading data from various sources.
 
 
 The EarthML `Tutorial <tutorial>`_ offers a general-purpose overview
@@ -37,13 +38,17 @@ learning tasks in the Earth sciences, such as:
 .. raw:: html
 
    <div>
-   <div >
+   <div style="display: flex">
      <a href="topics/Heat_and_Trees.html">
-       <img src="_static/collage/trees.png" width='30%'>    </img> </a>
+       <img src="_static/collage/trees.png"></img></a>
      <a href="topics/Walker_Lake.html">
-       <img src="_static/collage/walker.png" width='30%'> </img>  </a>
+       <img src="_static/collage/walker.png"></img></a>
+   </div>
+   <div style="display: flex">
      <a href="topics/Landsat_Spectral_Clustering.html">
-       <img src="_static/collage/cluster.png" width='30%'> </img>    </a>
+       <img src="_static/collage/cluster.png"></img></a>
+     <a href="topics/Landsat_Classifier_Ensemble.html">
+       <img src="_static/collage/ensemble.png"></img></a>
    </div>
    </div>
 
