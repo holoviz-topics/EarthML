@@ -57,6 +57,7 @@ jobs:
       script:
         - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --skip '.*Carbon_Flux.*' --nblink=top
         - nbsite build --what=html --output=builtdocs
+        - doit task_move_json
 
       deploy:
         provider: pages
