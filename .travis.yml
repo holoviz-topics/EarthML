@@ -1,4 +1,11 @@
+# We deliberately don't use travis's language=python option because
+# we install miniconda and use conda to get python. Additionally,
+# Travis's auto-install of python doesn't work on osx images (see
+# https://github.com/travis-ci/travis-ci/issues/4729).
 language: generic
+sudo: false
+os:
+  - linux
 
 cache:
   timeout: 300
@@ -8,6 +15,7 @@ cache:
 env:
   global:
     - PYENV_VERSION=3.6
+    - CHANS="-c conda-forge -c pyviz"
     - CHANS_DEV="-c pyviz/label/dev"
 
 stages:
@@ -25,12 +33,15 @@ jobs:
         - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
         - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
         - conda config --set always_yes True
+        - conda install -c pyviz pyctdev && doit ecosystem_setup
       install:
-        - conda env create -f environment.yml
-        - source activate earthml
-      script:
+        - doit env_create $CHANS --python=$PYENV_VERSION
+        - source activate test-environment
+        - conda env update -f environment.yml
         - pip install nbsmoke pytest
-        - python before_test.py && mv test_catalog.yml examples/catalog.yml
+        - doit env_capture
+      script:
+        - doit before_test
         - pytest --nbsmoke-run -k ".ipynb"  # this takes about 20 min locally
 
     ########## DOCS ##########
@@ -38,9 +49,10 @@ jobs:
     - <<: *default
       stage: doc
       env: DESC="docs"
-      script:
-        - source activate earthml
+      install:
+        - source activate test-environment
         - pip install nbsite==0.5.1 sphinx_ioam_theme
+      script:
         - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --skip '.*Carbon_Flux.*' --nblink=bottom
         - nbsite build --what=html --output=builtdocs
 
