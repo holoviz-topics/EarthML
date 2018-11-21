@@ -11,6 +11,7 @@ cache:
   timeout: 300
   directories:
     - $HOME/miniconda
+    - $HOME/.intake
 
 env:
   global:
@@ -42,7 +43,7 @@ jobs:
         - doit env_capture
       script:
         - doit before_test
-        - pytest --nbsmoke-run -k ".ipynb"  # this takes about 20 min locally
+        - pytest --nbsmoke-run -k ".ipynb"
 
     ########## DOCS ##########
 
@@ -53,7 +54,7 @@ jobs:
         - source activate earthml
         - conda install $CHANS nbsite==0.5.1 sphinx_ioam_theme
       script:
-        - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --skip '.*Carbon_Flux.*' --nblink=bottom
+        - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --skip '.*Carbon_Flux.*' --nblink=top
         - nbsite build --what=html --output=builtdocs
 
       deploy:
