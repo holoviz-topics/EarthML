@@ -37,19 +37,24 @@ learning tasks in the Earth sciences, such as:
 
 .. raw:: html
 
-   <div>
-   <div style="display: flex">
-     <a href="topics/Heat_and_Trees.html">
-       <img src="_static/collage/trees.png"></img></a>
-     <a href="topics/Walker_Lake.html">
-       <img src="_static/collage/walker.png"></img></a>
-   </div>
-   <div style="display: flex">
-     <a href="topics/Landsat_Spectral_Clustering.html">
-       <img src="_static/collage/cluster.png"></img></a>
-     <a href="topics/Landsat_Classifier_Ensemble.html">
-       <img src="_static/collage/ensemble.png"></img></a>
-   </div>
+   <div style="display: flex; flex-flow: column">
+      <div style="display: flex; flex-flow: row">
+         <a href="topics/Heat_and_Trees.html">
+            <img src="_static/collage/trees.png" width=95%/>
+         </a>
+         <a href="topics/Walker_Lake.html">
+            <img src="_static/collage/walker.png" width=95%/>
+         </a>
+      </div>
+      <br></br>
+      <div style="display: flex; flex-flow: row">
+         <a href="topics/Landsat_Spectral_Clustering.html">
+            <img src="_static/collage/cluster.png" width=95%/>
+         </a>
+         <a href="topics/Landsat_Classifier_Ensemble.html">
+            <img src="_static/collage/ensemble.png" width=95%/>
+         </a>
+      </div>
    </div>
 
 
