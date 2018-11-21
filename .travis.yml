@@ -35,10 +35,10 @@ jobs:
         - conda config --set always_yes True
         - conda install -c pyviz pyctdev && doit ecosystem_setup
       install:
-        - doit env_create $CHANS --python=$PYENV_VERSION
-        - source activate test-environment
-        - conda env update -f environment.yml
-        - pip install nbsmoke pytest
+        - doit env_create $CHANS --python=$PYENV_VERSION --name earthml
+        - source activate earthml
+        - conda env update -f environment.yml -n earthml
+        - conda install $CHANS nbsmoke pytest
         - doit env_capture
       script:
         - doit before_test
@@ -50,8 +50,8 @@ jobs:
       stage: doc
       env: DESC="docs"
       install:
-        - source activate test-environment
-        - pip install nbsite==0.5.1 sphinx_ioam_theme
+        - source activate earthml
+        - conda install $CHANS nbsite==0.5.1 sphinx_ioam_theme
       script:
         - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --skip '.*Carbon_Flux.*' --nblink=bottom
         - nbsite build --what=html --output=builtdocs
