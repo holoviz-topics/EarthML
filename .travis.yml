@@ -35,10 +35,10 @@ jobs:
         - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
         - conda config --set always_yes True
         - conda install -c pyviz pyctdev && doit ecosystem_setup
-      install:
         - doit env_create $CHANS --python=$PYENV_VERSION --name earthml
-        - source activate earthml
         - conda env update -f environment.yml -n earthml
+      install:
+        - source activate earthml
         - conda install $CHANS nbsmoke pytest
         - doit env_capture
       script:
@@ -53,6 +53,7 @@ jobs:
       install:
         - source activate earthml
         - conda install $CHANS nbsite==0.5.1 sphinx_ioam_theme
+        - doit env_capture
       script:
         - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --skip '.*Carbon_Flux.*' --nblink=top
         - nbsite build --what=html --output=builtdocs
