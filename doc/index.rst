@@ -27,6 +27,7 @@ in this domain:
       datasets into images for display in browsers.
    -  `XArray <http://xarray.pydata.org>`_: Processing gridded data structures.
    -  `Dask <http://dask.pydata.org/en/latest/>`_: Parallelism and performance at scale.
+   -  `Intake <https://intake.readthedocs.io>`_: Cleanly loading data from various sources.
 
 
 The EarthML `Tutorial <tutorial>`_ offers a general-purpose overview
@@ -36,15 +37,24 @@ learning tasks in the Earth sciences, such as:
 
 .. raw:: html
 
-   <div>
-   <div >
-     <a href="http://earthml.pyviz.org/topics/Heat_and_Trees.html">
-       <img src="_static/collage/trees.png" width='30%'>    </img> </a>
-     <a href="http://earthml.pyviz.org/topics/Walker_Lake.html">
-       <img src="_static/collage/walker.png" width='30%'> </img>  </a>
-     <a href="http://earthml.pyviz.org/topics/landsat_spectral_clustering.html">
-       <img src="_static/collage/cluster.png" width='30%'> </img>    </a>
-   </div>
+   <div style="display: flex; flex-flow: column">
+      <div style="display: flex; flex-flow: row">
+         <a href="topics/Heat_and_Trees.html">
+            <img src="_static/collage/trees.png" width=95%/>
+         </a>
+         <a href="topics/Walker_Lake.html">
+            <img src="_static/collage/walker.png" width=95%/>
+         </a>
+      </div>
+      <br></br>
+      <div style="display: flex; flex-flow: row">
+         <a href="topics/Landsat_Spectral_Clustering.html">
+            <img src="_static/collage/cluster.png" width=95%/>
+         </a>
+         <a href="topics/Landsat_Classifier_Ensemble.html">
+            <img src="_static/collage/ensemble.png" width=95%/>
+         </a>
+      </div>
    </div>
 
 
