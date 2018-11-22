@@ -10,3 +10,12 @@ def task_before_test():
         'python before_test.py',
         'mv test_catalog.yml examples/catalog.yml'
     ]}
+
+
+def task_move_json():
+    """Experimental: copy json from doc dir to builtdocs. This should move to nbsite"""
+    return {'actions':[
+        'cp doc/*.json builtdocs/ 2>/dev/null || :',
+        'cp doc/topics/*.json builtdocs/topics/ 2>/dev/null || :',
+        'cp doc/tutorial/*.json builtdocs/tutorial/ 2>/dev/null || :',
+    ]}

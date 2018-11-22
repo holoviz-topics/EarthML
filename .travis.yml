@@ -55,8 +55,10 @@ jobs:
         - conda install $CHANS nbsite==0.5.1 sphinx_ioam_theme
         - doit env_capture
       script:
+        - doit before_test  ## NOTE do not run this when building the site locally!!
         - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --skip '.*Carbon_Flux.*' --nblink=top
         - nbsite build --what=html --output=builtdocs
+        - doit task_move_json
 
       deploy:
         provider: pages
