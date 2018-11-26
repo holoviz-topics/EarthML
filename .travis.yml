@@ -58,7 +58,7 @@ jobs:
         - doit before_test  ## NOTE do not run this when building the site locally!!
         - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --skip '.*Carbon_Flux.*' --nblink=top
         - nbsite build --what=html --output=builtdocs
-        - doit task_move_json
+        - doit move_json
 
       deploy:
         provider: pages
