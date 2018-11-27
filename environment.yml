@@ -1,12 +1,13 @@
 name: earthml
 channels:
   - conda-forge
+  - nodefaults
 dependencies:
   - cartopy
   - colorcet
   - dask
   - dask-ml
-  - datashader
+  - pyviz/label/dev::datashader
   - geopandas
   - pyviz/label/dev::geoviews
   - pyviz/label/dev::holoviews

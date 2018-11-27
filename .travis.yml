@@ -16,7 +16,7 @@ cache:
 env:
   global:
     - PYENV_VERSION=3.6
-    - CHANS="-c conda-forge -c pyviz"
+    - CHANS="-c pyviz"
     - CHANS_DEV="-c pyviz/label/dev"
 
 stages:
@@ -34,8 +34,10 @@ jobs:
         - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
         - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
         - conda config --set always_yes True
-        - conda install -c pyviz pyctdev && doit ecosystem_setup
-        - doit env_create $CHANS --python=$PYENV_VERSION --name earthml
+        - conda config --remove channels defaults
+        - conda config --add channels conda-forge
+        - conda install $CHANS pyctdev && doit ecosystem_setup
+        - doit env_create -c conda-forge --python=$PYENV_VERSION --name earthml
         - conda env update -f environment.yml -n earthml
       install:
         - source activate earthml
@@ -54,9 +56,9 @@ jobs:
         - source activate earthml
         - conda install $CHANS nbsite==0.5.1 sphinx_ioam_theme
         - doit env_capture
-        - git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
-        - git checkout -b deploy-${TRAVIS_BRANCH}
-        - git fetch
+        - git clone https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
+        - cd $TRAVIS_REPO_SLUG
+        - git checkout -qf $TRAVIS_COMMIT
         - git checkout evaluated doc  # all large evaluated notebooks and their json files should be checked in to this branch
       script:
         - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --skip '.*Carbon_Flux.*' --nblink=top
