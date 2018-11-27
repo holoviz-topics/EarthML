@@ -13,6 +13,10 @@ cache:
     - $HOME/miniconda
     - $HOME/.intake
 
+env:
+  global:
+    - PYENV_VERSION=3.6
+
 stages:
   - test
   - name: website_dev
