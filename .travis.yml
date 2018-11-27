@@ -54,8 +54,11 @@ jobs:
         - source activate earthml
         - conda install $CHANS nbsite==0.5.1 sphinx_ioam_theme
         - doit env_capture
-      script:
+        - git config remote.origin.fetch +refs/heads/*:refs/remotes/origin/*
+        - git checkout -b deploy-${TRAVIS_BRANCH}
+        - git fetch
         - git checkout evaluated doc  # all large evaluated notebooks and their json files should be checked in to this branch
+      script:
         - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --skip '.*Carbon_Flux.*' --nblink=top
         - nbsite build --what=html --output=builtdocs
         - doit move_json
