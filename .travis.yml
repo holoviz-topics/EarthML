@@ -13,15 +13,11 @@ cache:
     - $HOME/miniconda
     - $HOME/.intake
 
-env:
-  global:
-    - PYENV_VERSION=3.6
-    - CHANS="-c pyviz"
-    - CHANS_DEV="-c pyviz/label/dev"
-
 stages:
   - test
-  - name: doc
+  - name: website_dev
+    if: tag =~ ^v(\d+|\.)+[a-z]\d+$ OR tag = website_dev
+  - name: website_release
     if: tag =~ ^v(\d+|\.)+[^a-z]\d+$ OR tag = website
 
 jobs:
@@ -45,10 +41,13 @@ jobs:
 
     ########## DOCS ##########
 
-    - <<: *default
-      stage: doc
-      env: DESC="docs"
+    - &website
+      <<: *default
+      stage: website_release
+      env: DESC="website"
       install:
+        - source activate earthml
+        - doit env_capture
         - git clone https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
         - cd $TRAVIS_REPO_SLUG
         - git checkout -qf $TRAVIS_COMMIT
@@ -64,6 +63,18 @@ jobs:
         github_token: $GITHUB_TOKEN
         local_dir: ./builtdocs
         fqdn: earthml.pyviz.org
+        on:
+          tags: true
+          all_branches: true
+
+    - <<: *website
+      stage: website_dev
+      deploy:
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        local_dir: ./builtdocs
+        repo: pyviz-dev/earthml
         on:
           tags: true
           all_branches: true
