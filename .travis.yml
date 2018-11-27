@@ -52,10 +52,9 @@ jobs:
       install:
         - source activate earthml
         - doit env_capture
-        - git clone https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
-        - cd $TRAVIS_REPO_SLUG
-        - git checkout -qf $TRAVIS_COMMIT
-        - git checkout evaluated doc  # all large evaluated notebooks and their json files should be checked in to this branch
+        - git checkout -b deploy-${TRAVIS_BRANCH}
+        - git fetch https://github.com/$TRAVIS_REPO_SLUG.git evaluated:refs/remotes/evaluated
+        - git checkout evaluated -- doc  # all large evaluated notebooks and their json files should be checked in to this branch
       script:
         - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --skip '.*Carbon_Flux.*' --nblink=top
         - nbsite build --what=html --output=builtdocs
