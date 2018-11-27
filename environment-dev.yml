@@ -1,0 +1,10 @@
+name: earthml-dev
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - pyviz::pyctdev
+  - pyviz::nbsmoke
+  - pytest
+  - pyviz::nbsite==0.5.1
+  - pyviz::sphinx_ioam_theme
