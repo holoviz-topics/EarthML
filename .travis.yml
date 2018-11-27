@@ -34,14 +34,10 @@ jobs:
         - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
         - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
         - conda config --set always_yes True
-        - conda config --remove channels defaults
-        - conda config --add channels conda-forge
-        - conda install $CHANS pyctdev && doit ecosystem_setup
-        - doit env_create -c conda-forge --python=$PYENV_VERSION --name earthml
         - conda env update -f environment.yml -n earthml
+        - conda env update -f environment-dev.yml -n earthml
       install:
         - source activate earthml
-        - conda install $CHANS nbsmoke pytest
         - doit env_capture
       script:
         - doit before_test
@@ -53,9 +49,6 @@ jobs:
       stage: doc
       env: DESC="docs"
       install:
-        - source activate earthml
-        - conda install $CHANS nbsite==0.5.1 sphinx_ioam_theme
-        - doit env_capture
         - git clone https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
         - cd $TRAVIS_REPO_SLUG
         - git checkout -qf $TRAVIS_COMMIT
