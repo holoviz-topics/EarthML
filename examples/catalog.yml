@@ -23,6 +23,7 @@ sources:
           groupby: 'band'
           datashade: True
           width: 400
+
   l8:
     description: Images contain Landsat 8 Surface Reflectance Level-2 Science Product.
     driver: rasterio
@@ -38,38 +39,9 @@ sources:
         y: 256
       concat_dim: band
       storage_options: {'anon': True}
-  landsat_sample:
-    description: Sample Landsat image.
-    driver: rasterio
-    cache:
-      - argkey: urlpath
-        regex: 'earth-data'
-        type: file
-    args:
-      urlpath: 's3://earth-data/landsat-sample.tiff'
-      chunks:
-        band: 1
-        x: 256
-        y: 256
-      concat_dim: concat_dim
-      storage_options: {'anon': True}
-  midwest_mosaic:
-    description: Pangeo Landsat Mosaics - Midwest
-    driver: rasterio
-    cache:
-      - argkey: urlpath
-        regex: 'earth-data'
-        type: file
-    args:
-      urlpath: 's3://earth-data/Midwest_Mosaic.tif'
-      chunks:
-        band: 1
-        x: 256
-        y: 256
-      concat_dim: concat_dim
-      storage_options: {'anon': True}
 
   google_landsat_band:
+    description: Landsat bands from Google Cloud Storage
     driver: rasterio
     parameters:
       path:
@@ -90,6 +62,34 @@ sources:
         band: 1
         x: 256
         y: 256
+
+  amazon_landsat_band:
+    description: Landsat bands from Amazon Web Services S3
+    driver: rasterio
+    parameters:
+      path:
+        description: landsat path
+        type: int
+      row:
+        description: landsat row
+        type: int
+      product_id:
+        description: landsat file id
+        type: str
+      band:
+        description: band
+        type: int
+    cache:
+      - argkey: urlpath
+        regex: 'landsat-pds'
+        type: file
+    args:
+      urlpath: s3://landsat-pds/c1/L8/{{ '%03d' % path }}/{{ '%03d' % row }}/{{ product_id }}/{{ product_id }}_B{{ band }}.TIF
+      chunks:
+        band: 1
+        x: 256
+        y: 256
+      storage_options: {'anon': True}
 
   fluxnet_daily:
     driver: csv
