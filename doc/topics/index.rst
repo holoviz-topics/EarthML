@@ -11,6 +11,7 @@ Contents:
 
 * `Carbon Flux <Carbon_Flux.html>`_
    Visualizing and estimating carbon flux at sites using fluxnet data.
+
    .. figure:: ../_static/collage/carbon.png
       :scale: 30 %
       :alt: Visualizing and estimating carbon flux at sites
