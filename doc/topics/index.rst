@@ -10,7 +10,11 @@ To learn how to use EarthML, see the `Tutorial
 Contents:
 
 * `Carbon Flux <Carbon_Flux.html>`_
-   Visualizing and estimating global carbon flux from fluxnet and RSIF data.
+   Visualizing and estimating carbon flux at sites using fluxnet data.
+   .. figure:: ../_static/collage/carbon.png
+      :scale: 30 %
+      :alt: Visualizing and estimating carbon flux at sites
+
 
 * `Heat and Trees <Heat_and_Trees.html>`_
    Analysis of how trees affect heat distribution in urban areas.
