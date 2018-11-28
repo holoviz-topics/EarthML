@@ -1,4 +1,4 @@
-name: earthml-dev
+name: earthml
 channels:
   - conda-forge
   - nodefaults
