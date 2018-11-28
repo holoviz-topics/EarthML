@@ -84,7 +84,7 @@ sources:
       band:
         description: band
         type: int
-    args: 
+    args:
       urlpath: https://storage.googleapis.com/gcp-public-data-landsat/LC08/01/{{ '%03d' % path }}/{{ '%03d' % row }}/{{ product_id }}/{{ product_id }}_B{{ band }}.TIF
       chunks:
         band: 1
@@ -109,7 +109,8 @@ sources:
         assume_missing: true
         na_values: [-9999]
         parse_dates: ['TIMESTAMP']
-        
+      storage_options: {'anon': True}
+
   fluxnet_metadata:
     driver: csv
     cache:
@@ -118,8 +119,8 @@ sources:
         type: file
     args:
       urlpath: "s3://earth-data/carbon_flux/nee_data_fusion/allflux_metadata.txt"
-      csv_kwargs: 
+      csv_kwargs:
         header: null
-        names: ['site', 'lat', 'lon', 'igbp', 'network'] 
+        names: ['site', 'lat', 'lon', 'igbp', 'network']
         usecols: ['site', 'lat', 'lon', 'igbp']
-        
+      storage_options: {'anon': True}
