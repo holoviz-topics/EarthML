@@ -20,6 +20,7 @@ dependencies:
   - rasterio
   - s3fs
   - scikit-learn
+  - tqdm
   - xarray
   - pip:
     - rio-toa
