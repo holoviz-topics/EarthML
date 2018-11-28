@@ -16,8 +16,10 @@ dependencies:
   - intake-xarray
   - numpy
   - pandas
+  - pyviz/label/dev::panel
   - rasterio
   - s3fs
+  - scikit-learn
   - xarray
   - pip:
     - rio-toa
