@@ -3,9 +3,9 @@ EarthML Tutorial
 
 The EarthML tutorial takes you through the various stages involved in using Python open-source tools to work with machine-learning and related data analysis tools for climate and other Earth science topics:
 
-* `Introduction and Workflow <01_Introduction_and_Workflow.html>`_: Overview of the recommended workflow.
+* `Data Ingestion with Intake <01_Data_Ingestion_with_Intake.html>`_: Loading large data sets efficiently with `intake <https://github.com/ContinuumIO/intake>`_.
 
-* `Data Ingestion with Intake <02_Data_Ingestion_with_Intake.html>`_: Loading large data sets efficiently with `intake <https://github.com/ContinuumIO/intake>`_.
+* `Introduction to Visualization <02_Introduction_to_Visualization.html>`_: How to visualize data loaded into memory.
 
 * `Alignment and Preprocessing <03_Alignment_and_Preprocessing.html>`_: How to prepare your data for the machine learning pipeline.
 
@@ -21,8 +21,8 @@ The EarthML tutorial takes you through the various stages involved in using Pyth
     :hidden:
     :maxdepth: 2
                
-    Introduction and Workflow <01_Introduction_and_Workflow>
-    Data Ingestion with Intake <02_Data_Ingestion_with_Intake>
+    Data Ingestion with Intake <01_Data_Ingestion_with_Intake>
+    Introduction to Visualization <02_Introduction_to_Visualization>
     Alignment and Preprocessing <03_Alignment_and_Preprocessing>
     Resampling <04_Resampling>
     Machine Learning <05_Machine_Learning>
