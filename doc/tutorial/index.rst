@@ -5,7 +5,7 @@ The EarthML tutorial takes you through the various stages involved in using Pyth
 
 * `Introduction and Workflow <01_Introduction_and_Workflow.html>`_: Overview of the recommended workflow.
 
-* `Data Ingestion with Intake] <02_Data_Ingestion_with_Intake.html>`_: Loading large data sets efficiently with `intake <https://github.com/ContinuumIO/intake>`_.
+* `Data Ingestion with Intake <02_Data_Ingestion_with_Intake.html>`_: Loading large data sets efficiently with `intake <https://github.com/ContinuumIO/intake>`_.
 
 * `Alignment and Preprocessing <03_Alignment_and_Preprocessing.html>`_: How to prepare your data for the machine learning pipeline.
 
