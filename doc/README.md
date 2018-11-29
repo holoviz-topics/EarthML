@@ -58,6 +58,14 @@ This will generate a bunch of .rst files in the doc dir. They won't show up if
 you do `git status` because they aren't tracked and are being actively ignored.
 To clean them out I recommend you run `git clean -xfdi doc`. But be careful.
 
+> This is kind of terrible, but if you want to generate just one example you
+> can generate just the rst for that example. That would looks like:
+>
+> ```
+> nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --nblink=top --skip '.*topics/.*,.*02.*,.*03.*,.*04.*,.*05.*,.*06.*'
+> ```
+> That will make just 01_ and the index notebooks. TODO: We should add a `nbsite --include` flag
+
 ### Step 2: evaluate notebooks
 Next we will evaluate all the notebooks. This is the step that can take a while.
 These notebooks will be under the doc dir and there are .json blobs that accompany them.
