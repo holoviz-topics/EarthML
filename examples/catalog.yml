@@ -23,6 +23,7 @@ sources:
           groupby: 'band'
           datashade: True
           width: 400
+          dynamic: False
 
   l8:
     description: Images contain Landsat 8 Surface Reflectance Level-2 Science Product.
