@@ -69,10 +69,15 @@ These notebooks will be under the doc dir and there are .json blobs that accompa
 > ```bash
 > git fetch https://github.com/pyviz-topics/earthml.git evaluated:refs/remotes/evaluated
 > git checkout evaluated -- doc
+> git reset HEAD
 > ```
 >
 > Now you should have a lot of .ipynb and .json files in the doc dir. To avoid running
 > all the notebooks you can just rm the notebook that you are interested in.
+>
+> ```bash
+> rm doc/<path_to_your_evaluated_notebook>
+> ```
 
 To evaluate the notebooks run:
 
@@ -80,10 +85,13 @@ To evaluate the notebooks run:
 nbsite build --what=html --output=builtdocs
 ```
 
-> **NOTE**: Any notebook that exists in the doc dir will not be re-evaluated.
+**NOTE**: Any notebook that exists in the doc dir will not be re-evaluated.
 
 Now you should have a builtdocs dir with a lot of html in it. This is a
 build artifact and should never be checked in anywhere by a human.
+
+**NOTE:** 05_Machine_Learning.ipynb takes a long time to run, but if it takes more than
+~10min you should kill the process and run the build command again.
 
 ### Step 3: run website locally
 
@@ -101,29 +109,31 @@ version to the `evaluated` branch. I think the easiest way to do this is to comm
 the file on the branch you are on:
 
 ```bash
-git add doc/<path_to_your_evaluated_notebook>
-git add doc/<path_to_any_new_json_you_generated>
+git add doc/<path_to_your_evaluated_notebook> -f
 git commit -m "Adding my evalutated notebook"
 ```
 
-Keep track of that commit ref. Then checkout evaluated (making sure it's up to date)
+Then checkout evaluated (making sure it's up to date) and put your evaluated
+notebook onto that branch.
 
 ```bash
 git checkout evaluated
 git pull
-git cherry-pick <commit-from-other-branch>
+git checkout <your-branch> doc/<path_to_your_evaluated_notebook>
+git add doc/**/*.json
+git commit -m "Adding my evalutated notebook"
 git push
 ```
 
 If you still care about your other branch check it out and do:
 
-```
+```bash
 git reset HEAD~
 ```
 
 ---
 
-OR
+## OR
 
 ---
 
@@ -167,7 +177,7 @@ First fetch all the tags and inspect them to get the next logical tag
 
 ```bash
 git fetch --tags
-git tags
+git tag
 ```
 
 Once you've figured out what your tag will be do:
@@ -186,7 +196,7 @@ First fetch all the tags and inspect them to get the next logical tag
 
 ```bash
 git fetch --tags
-git tags
+git tag
 ```
 
 Once you've figured out what your tag will be do:
