@@ -109,29 +109,31 @@ version to the `evaluated` branch. I think the easiest way to do this is to comm
 the file on the branch you are on:
 
 ```bash
-git add doc/<path_to_your_evaluated_notebook>
-git add doc/<path_to_any_new_json_you_generated>
+git add doc/<path_to_your_evaluated_notebook> -f
 git commit -m "Adding my evalutated notebook"
 ```
 
-Keep track of that commit ref. Then checkout evaluated (making sure it's up to date)
+Then checkout evaluated (making sure it's up to date) and put your evaluated
+notebook onto that branch.
 
 ```bash
 git checkout evaluated
 git pull
-git cherry-pick <commit-from-other-branch>
+git checkout <your-branch> doc/<path_to_your_evaluated_notebook>
+git add doc/**/*.json
+git commit -m "Adding my evalutated notebook"
 git push
 ```
 
 If you still care about your other branch check it out and do:
 
-```
+```bash
 git reset HEAD~
 ```
 
 ---
 
-OR
+## OR
 
 ---
 
@@ -175,7 +177,7 @@ First fetch all the tags and inspect them to get the next logical tag
 
 ```bash
 git fetch --tags
-git tags
+git tag
 ```
 
 Once you've figured out what your tag will be do:
@@ -194,7 +196,7 @@ First fetch all the tags and inspect them to get the next logical tag
 
 ```bash
 git fetch --tags
-git tags
+git tag
 ```
 
 Once you've figured out what your tag will be do:
