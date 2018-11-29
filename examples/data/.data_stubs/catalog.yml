@@ -22,3 +22,23 @@ sources:
       urlpath: '{{ CATALOG_DIR }}/data/.data_stubs/landsat/LC08_L1TP_042033_20171022_20171107_01_T1_sr_band{band:d}.tif'
       chunks: {}
       concat_dim: band
+  amazon_landsat_band:
+    description: Images contain Landsat 8 Surface Reflectance Level-2 Science Product.
+    driver: rasterio
+    parameters:
+      path:
+        description: landsat path
+        type: int
+      row:
+        description: landsat row
+        type: int
+      product_id:
+        description: landsat file id
+        type: str
+      band:
+        description: band
+        type: int
+    args:
+      urlpath: '{{ CATALOG_DIR }}/data/.data_stubs/landsat/LC08_L1TP_042033_20171022_20171107_01_T1_sr_band6.tif'
+      chunks: {}
+      concat_dim: band
