@@ -9,14 +9,14 @@ dependencies:
   - dask-ml
   - pyviz/label/dev::datashader
   - geopandas
-  - pyviz/label/dev::geoviews
-  - pyviz/label/dev::holoviews
-  - pyviz/label/dev::hvplot
+  - pyviz/label/dev::geoviews ==1.6.0a2
+  - pyviz/label/dev::holoviews ==1.11.0a10
+  - pyviz/label/dev::hvplot ==0.3.0a5
   - intake
   - intake-xarray
   - numpy
   - pandas
-  - pyviz/label/dev::panel
+  - pyviz/label/dev::panel ==0.2.0a8
   - rasterio
   - s3fs
   - scikit-learn
