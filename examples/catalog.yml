@@ -21,7 +21,6 @@ sources:
           x: 'x'
           y: 'y'
           groupby: 'band'
-          geo: True
           datashade: True
           width: 400
           dynamic: False
