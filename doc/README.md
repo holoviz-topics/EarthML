@@ -69,10 +69,15 @@ These notebooks will be under the doc dir and there are .json blobs that accompa
 > ```bash
 > git fetch https://github.com/pyviz-topics/earthml.git evaluated:refs/remotes/evaluated
 > git checkout evaluated -- doc
+> git reset HEAD
 > ```
 >
 > Now you should have a lot of .ipynb and .json files in the doc dir. To avoid running
 > all the notebooks you can just rm the notebook that you are interested in.
+>
+> ```bash
+> rm doc/<path_to_your_evaluated_notebook>
+> ```
 
 To evaluate the notebooks run:
 
@@ -80,10 +85,13 @@ To evaluate the notebooks run:
 nbsite build --what=html --output=builtdocs
 ```
 
-> **NOTE**: Any notebook that exists in the doc dir will not be re-evaluated.
+**NOTE**: Any notebook that exists in the doc dir will not be re-evaluated.
 
 Now you should have a builtdocs dir with a lot of html in it. This is a
 build artifact and should never be checked in anywhere by a human.
+
+**NOTE:** 05_Machine_Learning.ipynb takes a long time to run, but if it takes more than
+~10min you should kill the process and run the build command again.
 
 ### Step 3: run website locally
 
