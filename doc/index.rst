@@ -9,31 +9,38 @@ EarthML
 
 **Machine learning and visualization in Python for Earth science**
 
-EarthML is an `open-source
-<https://github.com/ioam/holoviews/blob/master/LICENSE.txt>`_ Python
-library for exploratory machine learning research in Earth
-science. EarthML is designed to be a lightweight project with the aim of
-illustrating how other, freely available, general-purpose open source
-and `PyViz <http://pyviz.org>`_ projects may be used to solve problems
-in this domain:
+EarthML is a "meta-project" with the aim of illustrating how other,
+freely available, general-purpose open source projects may be used to
+solve problems in this domain:
 
-   -  `Bokeh <http://bokeh.pydata.org>`_: Interactive browser-based
-      plotting.
-   -  `HoloViews <http://holoviews.org>`_: Easy construction of Bokeh
-      plots for datasets.
-   -  `GeoViews <http://geoviews.org>`_: HoloViews with earth-specific
-      projections.
-   -  `Datashader <https://github.com/bokeh/datashader>`_: Rendering large
-      datasets into images for display in browsers.
-   -  `XArray <http://xarray.pydata.org>`_: Processing gridded data structures.
-   -  `Dask <http://dask.pydata.org/en/latest/>`_: Parallelism and performance at scale.
-   -  `Intake <https://intake.readthedocs.io>`_: Cleanly loading data from various sources.
-
+   - Data libraries:
+      -  `Intake <https://intake.readthedocs.io>`_: Cleanly loading data from various sources.
+      -  `XArray <http://xarray.pydata.org>`_: Processing gridded data structures.
+      -  `Pandas <http://pandas.pydata.org>`_: Processing gridded data structures.
+      -  `Dask <http://dask.pydata.org>`_: Parallelism and performance at scale.
+   - Visualization libraries:
+      -  `hvPlot <http://hvplot.pyviz.org>`_: Simple data-centric API for plotting, building on:
+        -  `Bokeh <http://bokeh.pydata.org>`_: Interactive browser-based
+           plotting.
+        -  `HoloViews <http://holoviews.org>`_: Easy construction of Bokeh
+           plots for datasets.
+        -  `GeoViews <http://geoviews.org>`_: HoloViews with earth-specific
+           projections.
+        -  `Datashader <https://github.com/bokeh/datashader>`_: Rendering large
+           datasets into images for display in browsers.
+      -  `Panel <https://panel.pyviz.org>`_: Dashboards, apps, and widgets for any library's plots.
+   - Other tools:
+      - `Jupyter <http://jupyter.org/>`_
+      - `Cartopy <https://scitools.org.uk/cartopy>`_
+   - ML tools: (representative only -- use any you like!)
+      - `Scikit-learn <https://scikit-learn.org>`_: General ML for numeric data
+      - `Keras <https://keras.io>`_/`TensorFlow <https://www.tensorflow.org>`_/- `PyTorch <https://pytorch.org>`_: Deep learning, images
+         
 
 The EarthML `Tutorial <tutorial>`_ offers a general-purpose overview
 of the concepts and tools involved, and the `Topics <topics>`_ section
-shows examples of how Python tools may be used to perform machine
-learning tasks in the Earth sciences, such as:
+shows examples of how these tools may be used to perform machine
+learning and related tasks in the Earth sciences, such as:
 
 .. raw:: html
 

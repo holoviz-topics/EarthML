@@ -59,7 +59,7 @@ you do `git status` because they aren't tracked and are being actively ignored.
 To clean them out I recommend you run `git clean -xfdi doc`. But be careful.
 
 > This is kind of terrible, but if you want to generate just one example you
-> can generate just the rst for that example. That would looks like:
+> can generate just the rst for that example. That would look like:
 >
 > ```
 > nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --nblink=top --skip '.*topics/.*,.*02.*,.*03.*,.*04.*,.*05.*,.*06.*'
