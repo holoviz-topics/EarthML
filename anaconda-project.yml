@@ -1,0 +1,42 @@
+name: EarthML Tutorial
+
+description: Machine learning and visualization in Python for Earth science
+
+platforms:
+- linux-64
+- osx-64
+- win-64
+
+env_specs:
+  anaconda50_py36:
+    channels:
+    - https://conda.anaconda.org/pyviz/label/dev
+    - https://conda.anaconda.org/conda-forge
+    - nodefaults
+    packages:
+    - notebook
+    - jupyter
+    - ipywidgets ==7.4.2
+    - keras
+    - cartopy
+    - colorcet
+    - dask
+    - dask-ml
+    - datashader ==0.6.9a1
+    - geopandas
+    - geoviews ==1.6.0a2
+    - holoviews ==1.11.0a10
+    - hvplot ==0.3.0a5
+    - intake
+    - intake-xarray
+    - numpy
+    - pandas
+    - panel ==0.2.0a8
+    - rasterio
+    - s3fs
+    - scikit-learn
+    - tqdm
+    - xarray
+    - pip:
+      - rio-toa
+      - rio-mucho
