@@ -35,7 +35,7 @@ solve problems in this domain:
    - ML tools: (representative only -- use any you like!)
       - `Scikit-learn <https://scikit-learn.org>`_: General ML for numeric data
       - `Keras <https://keras.io>`_/`TensorFlow <https://www.tensorflow.org>`_/- `PyTorch <https://pytorch.org>`_: Deep learning, images
-         
+
 
 The EarthML `Tutorial <tutorial>`_ offers a general-purpose overview
 of the concepts and tools involved, and the `Topics <topics>`_ section
@@ -58,14 +58,17 @@ learning and related tasks in the Earth sciences, such as:
          <a href="topics/Walker_Lake.html">
             <img src="_static/collage/walker.png" width=95%/>
          </a>
-         <a href="topics/Landsat_Spectral_Clustering.html">
-            <img src="_static/collage/cluster.png" width=95%/>
+         <a href="topics/Image_Classification.html">
+            <img src="_static/collage/classifier.png" width=95%/>
          </a>
       </div>
       <br></br>
       <div style="display: flex; flex-flow: row">
+         <a href="topics/Landsat_Spectral_Clustering.html">
+            <img src="_static/collage/cluster.png" width=95%/>
+         </a>
          <a href="topics/Landsat_Classifier_Ensemble.html">
-            <img src="_static/collage/ensemble.png" width=47%/>
+            <img src="_static/collage/ensemble.png" width=95%/>
          </a>
       </div>
    </div>

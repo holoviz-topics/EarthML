@@ -33,6 +33,14 @@ Contents:
       :alt: Visualizing the change in the NDVI over time
 
 
+* `Image Classification <Image_Classification.html>`_
+   Classifying satellite images using Keras+TensorFlow.
+
+   .. figure:: ../_static/collage/classifier.png
+      :scale: 30 %
+      :alt:  Classifying satellite images using Keras+TensorFlow.
+
+
 * `Landsat Spectral Clusering <Landsat_Spectral_Clustering.html>`_
    Unsupervised clustering of LANDSAT data
 
@@ -57,5 +65,6 @@ Contents:
     Carbon Flux <Carbon_Flux>
     Heat and Trees <Heat_and_Trees>
     Walker Lake <Walker_Lake>
+    Image Classification <Image_Classification.html>
     Landsat Spectral Clustering <Landsat_Spectral_Clustering>
     Landsat Classifier Ensemble <Landsat_Classifier_Ensemble>
