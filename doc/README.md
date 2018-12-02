@@ -32,7 +32,7 @@ doit before_test
 > **NOTE:** After running that command you will notice that your catalog.yml
 > has changed. **DO NOT** check in that new catalog.
 
-Now you have your fake catalog setup and can run all the tests like:
+Now you have your fake catalog set up and can run all the tests like:
 
 ```bash
 pytest --nbsmoke-run -k ".ipynb"
@@ -67,11 +67,10 @@ To clean them out I recommend you run `git clean -xfdi doc`. But be careful.
 > That will make just 01_ and the index notebooks. TODO: We should add a `nbsite --include` flag
 
 ### Step 2: evaluate notebooks
-Next we will evaluate all the notebooks. This is the step that can take a while.
-These notebooks will be under the doc dir and there are .json blobs that accompany them.
+Next we will evaluate all the notebooks, which for sites that have many notebooks or computation-intensive notebooks can take a long time. The evaluated notebooks will be under the doc dir and there are .json blobs that accompany them. 
 
 > #### Optional
-> To get pre-evaluated versions of the notebooks you can checkout doc dir of the
+> To get pre-evaluated versions of the notebooks you can check out doc dir of the
 > evaluated branch:
 >
 > ```bash
@@ -81,7 +80,7 @@ These notebooks will be under the doc dir and there are .json blobs that accompa
 > ```
 >
 > Now you should have a lot of .ipynb and .json files in the doc dir. To avoid running
-> all the notebooks you can just rm the notebook that you are interested in.
+> all the notebooks you can just rm the notebook(s) that you want to have re-evaluated.
 >
 > ```bash
 > rm doc/<path_to_your_evaluated_notebook>
@@ -114,14 +113,14 @@ python -m http.server
 
 If you have made changes to a notebook, then you'll want to push a new evaluated
 version to the `evaluated` branch. I think the easiest way to do this is to commit
-the file on the branch you are on:
+the evaluated file on the branch you are on:
 
 ```bash
 git add doc/<path_to_your_evaluated_notebook> -f
-git commit -m "Adding my evalutated notebook"
+git commit -m "Adding my evaluated notebook"
 ```
 
-Then checkout evaluated (making sure it's up to date) and put your evaluated
+Then check out `evaluated` (making sure it's up to date) and put your evaluated
 notebook onto that branch.
 
 ```bash
@@ -129,7 +128,7 @@ git checkout evaluated
 git pull
 git checkout <your-branch> doc/<path_to_your_evaluated_notebook>
 git add doc/**/*.json
-git commit -m "Adding my evalutated notebook"
+git commit -m "Adding my evaluated notebook"
 git push
 ```
 
@@ -177,42 +176,42 @@ git commit -m "Updating all evaluated notebooks"
 git push origin evaluated --force
 ```
 
-### Step 5: tag a dev release
+### Step 5: tag a dev release, if desired
 
 This step is optional.
 
-First fetch all the tags and inspect them to get the next logical tag
+First fetch all the tags and inspect them to get the next logical tag:
 
 ```bash
 git fetch --tags
 git tag
 ```
 
-Once you've figured out what your tag will be do:
+Once you've figured out what your tag will be, do:
 
 ```bash
 git tag -a v0.1.3a2
 git push --tags
 ```
 
-A travis job will start that when done, will deploy the site to
+A Travis job will start that (if completed successfully) will deploy the site to
 https://pyviz-dev.github.io/EarthML
 
-### Step 6: tag a release
+### Step 6: tag a release, if desired
 
-First fetch all the tags and inspect them to get the next logical tag
+First fetch all the tags and inspect them to get the next logical tag:
 
 ```bash
 git fetch --tags
 git tag
 ```
 
-Once you've figured out what your tag will be do:
+Once you've figured out what your tag will be, do:
 
 ```bash
 git tag -a v0.1.3
 git push --tags
 ```
 
-A travis job will start that when done, will deploy the site to:
+A Travis job will start that (if completed successfully) will deploy the site to
 http://earthml.pyviz.org/

@@ -22,5 +22,6 @@ dependencies:
   - scikit-learn
   - tqdm
   - xarray
+  - keras
   - pip:
     - rio-toa
