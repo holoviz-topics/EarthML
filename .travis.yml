@@ -53,8 +53,8 @@ jobs:
         - source activate earthml
         - doit env_capture
         - git checkout -b deploy-${TRAVIS_BRANCH}
-        - git fetch https://github.com/$TRAVIS_REPO_SLUG.git evaluated:refs/remotes/evaluated
-        - git checkout evaluated -- doc  # all large evaluated notebooks and their json files should be checked in to this branch
+        - git fetch https://github.com/$TRAVIS_REPO_SLUG.git evaluated:refs/remotes/evaluated # all large evaluated notebooks and their json files should be checked in to this branch
+        - git checkout evaluated -- 'doc/topics/*.json' 'doc/topics/*.json' 'doc/tutorial/*.json' 'doc/topics/*.json'
       script:
         - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --nblink=top
         - nbsite build --what=html --output=builtdocs
