@@ -1,5 +1,5 @@
 sources:
-  l5:
+  landsat_5:
     description: Images contain Landsat 5 Surface Reflectance Level-2 Science Product.
     driver: rasterio
     args:
@@ -15,7 +15,7 @@ sources:
           groupby: 'band'
           datashade: True
           width: 400
-  l8:
+  landsat_8:
     description: Images contain Landsat 8 Surface Reflectance Level-2 Science Product.
     driver: rasterio
     args:
