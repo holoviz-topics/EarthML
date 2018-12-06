@@ -76,9 +76,6 @@ learning and related tasks in the Earth sciences, such as:
       <a href="topics/Landsat_Spectral_Clustering.html"  >
          <img src="_static/collage/cluster.png" />
       </a>
-      <a href="topics/Landsat_Classifier_Ensemble.html" >
-         <img src="_static/collage/ensemble.png" />
-      </a>
    </div>
 
 

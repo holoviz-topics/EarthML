@@ -36,11 +36,11 @@ Contents:
       :alt: Visualizing the change in the NDVI over time
 
 
-* `Image Classification <Landsat_Spectral_Clustering.html>`_
+* `Image Classification <Image_Classification.html>`_
    Classifying satellite images using Keras+TensorFlow.
 
    .. figure:: ../_static/collage/classifier.png
-      :target: Landsat_Spectral_Clustering.html
+      :target: Image_Classification.html
       :scale: 30 %
       :alt:  Classifying satellite images using Keras+TensorFlow.
 
@@ -54,15 +54,6 @@ Contents:
       :alt: Unsupervised clustering of LANDSAT data
 
 
-* `Landsat Classifier Ensemble <Landsat_Classifier_Ensemble.html>`_
-   A comparison of scikit learn classifiers using LANDSAT 5 and LANDSAT 8 data sets.
-
-   .. figure:: ../_static/collage/ensemble.png
-      :target: Landsat_Classifier_Ensemble.html
-      :scale: 30 %
-      :alt:  A comparison of scikit learn classifiers
-
-
 .. toctree::
     :titlesonly:
     :hidden:
@@ -73,4 +64,3 @@ Contents:
     Walker Lake <Walker_Lake>
     Image Classification <Image_Classification>
     Landsat Spectral Clustering <Landsat_Spectral_Clustering>
-    Landsat Classifier Ensemble <Landsat_Classifier_Ensemble>
