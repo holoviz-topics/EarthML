@@ -67,7 +67,7 @@ To clean them out I recommend you run `git clean -xfdi doc`. But be careful.
 > That will make just 01_ and the index notebooks. TODO: We should add a `nbsite --include` flag
 
 ### Step 2: evaluate notebooks
-Next we will evaluate all the notebooks, which for sites that have many notebooks or computation-intensive notebooks can take a long time. The evaluated notebooks will be under the doc dir and there are .json blobs that accompany them. 
+Next we will evaluate all the notebooks, which for sites that have many notebooks or computation-intensive notebooks can take a long time. The evaluated notebooks will be under the doc dir and there are .json blobs that accompany them.
 
 > #### Optional
 > To get pre-evaluated versions of the notebooks you can check out doc dir of the
@@ -97,7 +97,7 @@ nbsite build --what=html --output=builtdocs
 Now you should have a builtdocs dir with a lot of html in it. This is a
 build artifact and should never be checked in anywhere by a human.
 
-**NOTE:** 05_Machine_Learning.ipynb takes a long time to run, but if it takes more than
+**NOTE:** 04_Machine_Learning.ipynb takes a long time to run, but if it takes more than
 ~10min you should kill the process and run the build command again.
 
 ### Step 3: run website locally
