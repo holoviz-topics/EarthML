@@ -56,28 +56,31 @@ learning and related tasks in the Earth sciences, such as:
 
 .. raw:: html
 
-   <div style="display: grid;
-               grid-template-columns: fit-content(350px) fit-content(350px) fit-content(350px);
-               grid-gap: 20px;
-               padding: 20px;">
-
-      <a href="topics/Carbon_Flux.html" >
-         <img src="_static/collage/carbon.png" />
-      </a>
-      <a href="topics/Heat_and_Trees.html">
-         <img src="_static/collage/trees.png" />
-      </a>
-      <a href="topics/Walker_Lake.html">
-         <img src="_static/collage/walker.png" />
-      </a>
-      <a href="topics/Image_Classification.html" >
-         <img src="_static/collage/classifier.png" />
-      </a>
-      <a href="topics/Landsat_Spectral_Clustering.html"  >
-         <img src="_static/collage/cluster.png" />
-      </a>
-   </div>
-
+   <style>table {border-spacing: 15px} td { border: 1px solid black; vertical-align: top} </style>
+   <table>
+     <tr>
+       <td border=1>
+         <a href="topics/Carbon_Flux.html"><b>Carbon Flux</b></a><br>
+         <a href="topics/Carbon_Flux.html"><img src="_static/collage/carbon.png" /></a>
+       </td>
+       <td border=1>
+         <a href="topics/Heat_and_Trees.html"><b>Heat and Trees</b></a><br>
+         <a href="topics/Heat_and_Trees.html"><img src="_static/collage/trees.png" /></a>
+       </td>
+       <td border=1>
+         <a href="topics/Walker_Lake.html"><b>Walker Lake</b></a><br>
+         <a href="topics/Walker_Lake.html"><img src="_static/collage/walker.png" /></a>
+       </td>
+       <td border=1>
+         <a href="topics/Image_Classification.html"><b>Classification</b></a><br>
+         <a href="topics/Image_Classification.html"><img src="_static/collage/classifier.png" /></a>
+       </td>
+       <td border=1>
+         <a href="topics/Landsat_Spectral_Clustering.html"><b>Clustering</b></a><br>
+         <a href="topics/Landsat_Spectral_Clustering.html"><img src="_static/collage/cluster.png" /></a>
+       </td>
+     <tr>
+   </table>
 
 Please feel free to report `issues
 <https://github.com/pyviz-topics/EarthML/issues>`_ or `contribute code
