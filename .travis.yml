@@ -2,22 +2,25 @@
 # we install miniconda and use conda to get python. Additionally,
 # Travis's auto-install of python doesn't work on osx images (see
 # https://github.com/travis-ci/travis-ci/issues/4729).
-language: shell
 sudo: false
-os:
-  - linux
-  - osx
-  - windows
+
+matrix:
+  include:
+    - os : linux
+      language: generic
+      python: "3.6"
+    - os : windows
+      language : shell
+      python: "3.6"
+    - os : osx
+      python: "3.6"
+      language: generic
 
 cache:
   timeout: 300
   directories:
     - $HOME/miniconda
     - $HOME/.intake
-
-env:
-  global:
-    - PYENV_VERSION=3.6
 
 stages:
   - test
@@ -33,11 +36,24 @@ jobs:
       stage: test
       env: DESC="dev test"
       before_install:
-        - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
-        - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
-        - conda config --set always_yes True
-        - conda env update -f environment.yml -n earthml
-        - conda env update -f environment-dev.yml -n earthml
+        - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+            wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+          elif  [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+            wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
+          fi
+        - if [[ "$TRAVIS_OS_NAME" != "windows" ]]; then
+            bash miniconda.sh -b -p $HOME/miniconda;
+            export PATH="$HOME/miniconda:$HOME/miniconda/bin:$PATH";
+          elif  [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
+            choco install miniconda3 --params="'/AddToPath:1'";
+            export PATH="/c/tools/miniconda3/scripts:/c/tools/miniconda3/:$PATH";
+          fi
+        - hash -r;
+        - echo $TRAVIS_OS_NAME
+        - echo $TRAVIS_PYTHON_VERSION
+        - conda config --set always_yes yes --set changeps1 no
+        - conda env update python=$TRAVIS_PYTHON_VERSION -f environment.yml -n earthml
+        - conda env update python=$TRAVIS_PYTHON_VERSION -f environment-dev.yml -n earthml
       install:
         - source activate earthml
         - doit env_capture
