@@ -2,52 +2,25 @@
 # we install miniconda and use conda to get python. Additionally,
 # Travis's auto-install of python doesn't work on osx images (see
 # https://github.com/travis-ci/travis-ci/issues/4729).
+
+language: sh
 sudo: false
+os:
+  - linux
+  - osx
+  - windows
+
+cache:
+  timeout: 300
+  directories:
+    - $HOME/.intake
 
 env:
   global:
     - PYENV_VERSION=3.6
 
-matrix:
-  include:
-    - os : linux
-      language: python
-    - os : windows
-      language : shell
-    - os : osx
-      language: python
-
-before_install:
-  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-      wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-    elif  [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-      wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
-    fi
-
-install:
-  - if [[ "$TRAVIS_OS_NAME" != "windows" ]]; then
-      bash miniconda.sh -b -p $HOME/miniconda;
-      export PATH="$HOME/miniconda:$HOME/miniconda/bin:$PATH";
-    elif  [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
-      choco install miniconda3 --params="'/AddToPath:1'";
-      export PATH="/c/tools/miniconda3/scripts:/c/tools/miniconda3/:$PATH";
-    fi
-  - hash -r;
-  - echo $TRAVIS_OS_NAME
-  - echo $PYENV_VERSION
-  - conda config --set always_yes yes --set changeps1 no
-  - conda env update python=$PYENV_VERSION -f environment.yml -n earthml
-  - conda env update python=$PYENV_VERSION -f environment-dev.yml -n earthml
-
-before_script:
-  - source activate earthml
-  - doit env_capture
-  - doit before_test
-
-script:
-  - pytest --nbsmoke-run -k ".ipynb"
-
 stages:
+  - test
   - name: website_dev
     if: tag =~ ^v(\d+|\.)+[a-z]\d+$ OR tag = website_dev
   - name: website_release
@@ -55,8 +28,41 @@ stages:
 
 jobs:
   include:
+    ########## SMOKE TESTING ##########
+    - &default
+      stage: test
+      env: DESC="dev test"
+      before_install:
+        - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
+            wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+          elif  [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+            wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
+          fi
+      install:
+        - if [[ "$TRAVIS_OS_NAME" != "windows" ]]; then
+            bash miniconda.sh -b -p $HOME/miniconda;
+            export PATH="$HOME/miniconda:$HOME/miniconda/bin:$PATH";
+          elif  [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
+            choco install miniconda3 --params="'/AddToPath:1'";
+            export PATH="/c/tools/miniconda3/scripts:/c/tools/miniconda3/:$PATH";
+          fi
+        - hash -r;
+        - echo $TRAVIS_OS_NAME
+        - echo $TRAVIS_PYTHON_VERSION
+        - conda config --set always_yes yes --set changeps1 no
+        - conda env update python=$TRAVIS_PYTHON_VERSION -f environment.yml -n earthml
+        - conda env update python=$TRAVIS_PYTHON_VERSION -f environment-dev.yml -n earthml
+      before_script:
+        - source activate earthml
+        - doit env_capture
+        - doit before_test
+      script:
+        - pytest --nbsmoke-run -k ".ipynb"
+
     ########## DOCS ##########
+
     - &website
+      <<: *default
       stage: website_release
       env: DESC="website"
       before_script:
@@ -69,6 +75,7 @@ jobs:
         - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --nblink=top
         - nbsite build --what=html --output=builtdocs
         - doit move_json
+
       deploy:
         provider: pages
         skip_cleanup: true
@@ -90,11 +97,6 @@ jobs:
         on:
           tags: true
           all_branches: true
-
-cache:
-  timeout: 300
-  directories:
-    - $HOME/.intake
 
 notifications:
   email: false
