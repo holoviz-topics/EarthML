@@ -7,19 +7,17 @@ sudo: false
 matrix:
   include:
     - os : linux
-      language: generic
+      language: python
       python: "3.6"
     - os : windows
       language : shell
       python: "3.6"
     - os : osx
       python: "3.6"
-      language: generic
 
 cache:
   timeout: 300
   directories:
-    - $HOME/miniconda
     - $HOME/.intake
 
 stages:
