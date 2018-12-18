@@ -39,9 +39,9 @@ matrix:
     - &windows
       <<: *default
       os: windows
-      env: GITHUB_TOKEN="not_needed" TRAVIS_SECURE_ENV_VARS=false
       before_install:
-        - choco install miniconda3 --params="'/AddToPath:1'";
+        - unset GITHUB_TOKEN
+        - choco install miniconda3 --params="'/AddToPath:1'" -v -y
         - export PATH="/c/tools/miniconda3/scripts:/c/tools/miniconda3/:$PATH";
 
     - &osx
