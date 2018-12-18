@@ -11,38 +11,18 @@ env:
   global:
     - PYENV_VERSION=3.6
 
-stages:
-  - test
-  - name: website_dev
-    if: tag =~ ^v(\d+|\.)+[a-z]\d+$ OR tag = website_dev
-  - name: website_release
-    if: tag =~ ^v(\d+|\.)+[^a-z]\d+$ OR tag = website
-
-jobs:
+matrix:
   include:
     ########## SMOKE TESTING ##########
     - &default
-      stage: test
       language: sh
-      os:
-        - linux
-        - osx
-        - windows
-      env: DESC="dev test"
+      os: linux
+      env: DESC="dev test $TRAVIS_OS_NAME"
       before_install:
-        - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then
-            wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
-          elif  [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-            wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
-          fi
+        - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+        - bash miniconda.sh -b -p $HOME/miniconda;
+        - export PATH="$HOME/miniconda:$HOME/miniconda/bin:$PATH";
       install:
-        - if [[ "$TRAVIS_OS_NAME" != "windows" ]]; then
-            bash miniconda.sh -b -p $HOME/miniconda;
-            export PATH="$HOME/miniconda:$HOME/miniconda/bin:$PATH";
-          elif  [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
-            choco install miniconda3 --params="'/AddToPath:1'";
-            export PATH="/c/tools/miniconda3/scripts:/c/tools/miniconda3/:$PATH";
-          fi
         - hash -r;
         - echo $TRAVIS_OS_NAME
         - echo $TRAVIS_PYTHON_VERSION
@@ -56,14 +36,27 @@ jobs:
       script:
         - pytest --nbsmoke-run -k ".ipynb"
 
+    - &windows
+      <<: *default
+      os: windows
+      before_install:
+        - choco install miniconda3 --params="'/AddToPath:1'";
+        - export PATH="/c/tools/miniconda3/scripts:/c/tools/miniconda3/:$PATH";
+
+    - &osx
+      <<: *default
+      os: osx
+      before_install:
+        - wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh -O miniconda.sh;
+        - bash miniconda.sh -b -p $HOME/miniconda;
+        - export PATH="$HOME/miniconda:$HOME/miniconda/bin:$PATH";
+
+
     ########## DOCS ##########
 
     - &website
       <<: *default
-      stage: website_release
-      language: generic
-      os:
-        - linux
+      if: tag =~ ^v(\d+|\.)+[^a-z]\d+$ OR tag = website
       env: DESC="website"
       before_script:
         - source activate earthml
@@ -87,7 +80,8 @@ jobs:
           all_branches: true
 
     - <<: *website
-      stage: website_dev
+      if: tag =~ ^v(\d+|\.)+[a-z]\d+$ OR tag = website_dev
+      env: DESC="website dev"
       deploy:
         provider: pages
         skip_cleanup: true
