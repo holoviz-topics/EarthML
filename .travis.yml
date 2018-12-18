@@ -2,7 +2,7 @@
 # we install miniconda and use conda to get python. Additionally,
 # Travis's auto-install of python doesn't work on osx images (see
 # https://github.com/travis-ci/travis-ci/issues/4729).
-language: generic
+language: shell
 sudo: false
 os:
   - linux
