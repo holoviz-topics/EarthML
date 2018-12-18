@@ -17,7 +17,7 @@ matrix:
     - &default
       language: sh
       os: linux
-      env: DESC="dev test $TRAVIS_OS_NAME"
+      env: DESC="dev test"
       before_install:
         - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
         - bash miniconda.sh -b -p $HOME/miniconda;
@@ -39,6 +39,7 @@ matrix:
     - &windows
       <<: *default
       os: windows
+      env: GITHUB_TOKEN="not_needed" TRAVIS_SECURE_ENV_VARS=false
       before_install:
         - choco install miniconda3 --params="'/AddToPath:1'";
         - export PATH="/c/tools/miniconda3/scripts:/c/tools/miniconda3/:$PATH";
