@@ -39,6 +39,7 @@ jobs:
         - doit ecosystem_setup
       install:
         - doit env_create
+        - source activate earthml
         - doit env_capture
       script:
         - doit small_data_setup

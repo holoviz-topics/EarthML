@@ -32,7 +32,6 @@ def task_env_create():
         "pip uninstall -y doit pyctdev",
         "conda env update -f environment.yml -n earthml",
         "conda env update -f environment-dev.yml -n earthml",
-        "source activate earthml",
     ]}
 
 
