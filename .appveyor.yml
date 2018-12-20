@@ -1,0 +1,18 @@
+environment:
+  global:
+    CONDA: "C:\\Miniconda36-x64"
+
+install:
+  - "SET PATH=%CONDA%;%CONDA%\\Scripts;%PATH%"
+  - "pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev"
+  - "conda config --set always_yes True"
+  - "conda env update -f environment.yml -n earthml"
+  - "conda env update -f environment-dev.yml -n earthml"
+  - "activate earthml"
+  - "doit env_capture"
+
+build: off
+
+test_script:
+  - "doit before_test"
+  - "doit test_examples"
