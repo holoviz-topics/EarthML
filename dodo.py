@@ -37,7 +37,7 @@ def task_env_create():
 
 
 def task_small_data_setup():
-    """Experimental: Create catalog from real and stubs and substitute for real"""
+    """Experimental: Create catalog from real and stubs; substitute for real catalog."""
 
     def create_joined_catalog(root='', path='examples', filename='catalog.yml'):
         import yaml
@@ -58,7 +58,7 @@ def task_small_data_setup():
 
                 with open(paths['real'], mode='w') as real_cat:
                     real_cat.write(yaml.dump(d))
-        print("Created catalog from real and stubs; substitute for real catalog.")
+        print("Created catalog from real and stubs; substituted for real catalog.")
 
     return {'actions': [create_joined_catalog]}
 
