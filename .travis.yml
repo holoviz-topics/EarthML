@@ -2,6 +2,9 @@
 # we install miniconda and use conda to get python. Additionally,
 # Travis's auto-install of python doesn't work on osx images (see
 # https://github.com/travis-ci/travis-ci/issues/4729).
+
+# This file should be using semantically named doit commands defined in
+# dodo.py
 language: generic
 sudo: false
 os:
@@ -31,17 +34,16 @@ jobs:
       stage: test
       env: DESC="dev test"
       before_install:
-        - pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev
+        - pip install pyctdev && doit miniconda_install
         - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
-        - conda config --set always_yes True
-        - conda env update -f environment.yml -n earthml
-        - conda env update -f environment-dev.yml -n earthml
+        - doit conda_setup
       install:
-        - source activate earthml
+        - doit env_setup
         - doit env_capture
       script:
-        - doit before_test
-        - pytest --nbsmoke-run -k ".ipynb"
+        - doit small_data_setup
+        - doit test_examples
+        - doit small_data_cleanup
 
     ########## DOCS ##########
 
@@ -49,16 +51,11 @@ jobs:
       <<: *default
       stage: website_release
       env: DESC="website"
-      install:
-        - source activate earthml
-        - doit env_capture
+      before_script:
         - git checkout -b deploy-${TRAVIS_BRANCH}
         - git fetch https://github.com/$TRAVIS_REPO_SLUG.git evaluated:refs/remotes/evaluated # all large evaluated notebooks and their json files should be checked in to this branch
         - git checkout evaluated -- 'doc/topics/*.ipynb' 'doc/topics/*.json'  # only check in evaluated topics
-      script:
-        - nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --nblink=top
-        - nbsite build --what=html --output=builtdocs
-        - doit move_json
+      script: doit build_website
 
       deploy:
         provider: pages
