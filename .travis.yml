@@ -36,9 +36,9 @@ jobs:
       before_install:
         - pip install pyctdev && doit miniconda_install
         - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
-        - doit conda_setup
+        - doit ecosystem_setup
       install:
-        - doit env_setup
+        - doit env_create
         - doit env_capture
       script:
         - doit small_data_setup
