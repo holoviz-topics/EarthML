@@ -18,6 +18,8 @@ If you want to also have the testing and doc building requirements:
 conda env update -f environment-dev.yml -n <name>
 ```
 
+> **SHORTCUT:** `doit env_create`
+
 ## Smoke testing
 Notebooks in examples are smoke tested using `nbsmoke` (list of ignored
 notebooks are in tox.ini - grep for `nbsmoke_skip_run`). For this they
@@ -26,7 +28,7 @@ a python command to replace entries in examples/data/catalog.yml with any
 found in examples/data/.data_stubs/test_catalog.yml:
 
 ```bash
-doit before_test
+doit small_data_setup
 ```
 
 > **NOTE:** After running that command you will notice that your catalog.yml
@@ -40,7 +42,7 @@ pytest --nbsmoke-run -k ".ipynb"
 
 ### Common Patterns
 
- - Run one test: `pytest --nbsmoke-run -k ".ipynb" -k "Walker_Lake" --ignore-nbsmoke-skip`
+- Run one test: `pytest --nbsmoke-run -k ".ipynb" -k "Walker_Lake" --ignore-nbsmoke-skip`
 
 ## Building the website
 The source material for the website is mostly in notebooks under examples.
@@ -58,35 +60,29 @@ This will generate a bunch of .rst files in the doc dir. They won't show up if
 you do `git status` because they aren't tracked and are being actively ignored.
 To clean them out I recommend you run `git clean -xfdi doc`. But be careful.
 
-> This is kind of terrible, but if you want to generate just one example you
+> This is kind of terrible, but if you want to run just one example you
 > can generate just the rst for that example. That would look like:
 >
 > ```
 > nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --nblink=top --skip '.*topics/.*,.*02.*,.*03.*,.*04.*,.*05.*,.*06.*'
 > ```
-> That will make just 01_ and the index notebooks. TODO: We should add a `nbsite --include` flag
+> That will make just 01_ and the index notebooks.
+>
+> **TODO:** We should add a `nbsite --include` flag
 
 ### Step 2: evaluate notebooks
 Next we will evaluate all the notebooks, which for sites that have many notebooks or computation-intensive notebooks can take a long time. The evaluated notebooks will be under the doc dir and there are .json blobs that accompany them.
 
 > #### Optional
-> To get pre-evaluated versions of the notebooks you can check out doc dir of the
-> evaluated branch:
+> Some notebooks have evaluated versions checked in to master as git-lfs files.
+> These notebooks will be skipped by default. You can rm the notebook(s) that you
+> want to re-evaluate. For example:
 >
 > ```bash
-> git fetch https://github.com/pyviz-topics/earthml.git evaluated:refs/remotes/evaluated
-> git checkout evaluated -- doc
-> git reset HEAD
-> ```
->
-> Now you should have a lot of .ipynb and .json files in the doc dir. To avoid running
-> all the notebooks you can just rm the notebook(s) that you want to have re-evaluated.
->
-> ```bash
-> rm doc/<path_to_your_evaluated_notebook>
+> rm doc/topics/Heat_and_Trees.ipynb
 > ```
 
-To evaluate the notebooks run:
+To run the notebooks do:
 
 ```bash
 nbsite build --what=html --output=builtdocs
@@ -97,88 +93,29 @@ nbsite build --what=html --output=builtdocs
 Now you should have a builtdocs dir with a lot of html in it. This is a
 build artifact and should never be checked in anywhere by a human.
 
-**NOTE:** 04_Machine_Learning.ipynb takes a long time to run, but if it takes more than
-~10min you should kill the process and run the build command again.
-
-### Step 3: run website locally
+### Step 3: serve website locally [Optional]
 
 This step is optional, but if you want to inspect the website locally do:
 
 ```bash
-cd builtdocs
-python -m http.server
+doit serve_website
 ```
 
-### Step 4: push *one* newly evaluated notebook
+### Step 4: add a new evaluated version of a notebook
 
-If you have made changes to a notebook, then you'll want to push a new evaluated
-version to the `evaluated` branch. I think the easiest way to do this is to commit
-the evaluated file on the branch you are on:
-
-```bash
-git add doc/<path_to_your_evaluated_notebook> -f
-git commit -m "Adding my evaluated notebook"
-```
-
-Then check out `evaluated` (making sure it's up to date) and put your evaluated
-notebook onto that branch.
+If you have made changes to a topics notebook, then you will want to check in
+a new evaluated version. To do this make sure you have
+[git-lfs](https://git-lfs.github.com/) installed, then do:
 
 ```bash
-git checkout evaluated
-git pull
-git checkout <your-branch> doc/<path_to_your_evaluated_notebook>
-git add doc/**/*.json
+git add doc/<path_to_your_evaluated_notebook>
 git commit -m "Adding my evaluated notebook"
 git push
 ```
 
-If you still care about your other branch check it out and do:
+Make a PR and merge it to master.
 
-```bash
-git reset HEAD~
-```
-
----
-
-## OR
-
----
-
-### Step 4: push *all* newly evaluated notebooks
-
-If you want to rebuild the whole evaluated branch and you have evaluated versions
-of all the notebooks (you've done steps 1 and 2), the first step is deleting
-the branch:
-
-```
-git branch -D evaluated
-```
-
-Then remove these lines from the .gitignore:
-
-```yml
-doc/**/*.ipynb
-doc/**/*.json
-```
-
-Check in the new .gitignore
-
-```bash
-git add .gitignore
-git commit -m "Updating gitignore to reflect this branch's different role"
-```
-
-Then add all your evaluated notebooks and force push the branch
-
-```bash
-git add doc
-git commit -m "Updating all evaluated notebooks"
-git push origin evaluated --force
-```
-
-### Step 5: tag a dev release, if desired
-
-This step is optional.
+### Step 5: tag a release
 
 First fetch all the tags and inspect them to get the next logical tag:
 
@@ -187,26 +124,18 @@ git fetch --tags
 git tag
 ```
 
-Once you've figured out what your tag will be, do:
+> #### Optional - tag a dev release
+> Tag a dev release like:
+>
+> ```bash
+> git tag -a v0.1.3a2
+> git push --tags
+> ```
+>
+> A Travis job will start that (if completed successfully) will deploy the site to
+> https://pyviz-dev.github.io/EarthML
 
-```bash
-git tag -a v0.1.3a2
-git push --tags
-```
-
-A Travis job will start that (if completed successfully) will deploy the site to
-https://pyviz-dev.github.io/EarthML
-
-### Step 6: tag a release, if desired
-
-First fetch all the tags and inspect them to get the next logical tag:
-
-```bash
-git fetch --tags
-git tag
-```
-
-Once you've figured out what your tag will be, do:
+Tag a full release like so:
 
 ```bash
 git tag -a v0.1.3

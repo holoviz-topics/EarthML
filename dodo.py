@@ -90,3 +90,10 @@ def task_build_website():
         'cp doc/topics/*.json builtdocs/topics/ 2>/dev/null || :',
         'cp doc/tutorial/*.json builtdocs/tutorial/ 2>/dev/null || :',
     ]}
+
+def task_serve_website():
+    """Build website using nbsite"""
+    return {'actions':[
+        "cd builtdocs",
+        "python -m http.server",
+    ]}
