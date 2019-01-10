@@ -107,6 +107,20 @@ earthml/.version
 
 *.DS_Store
 
+# nbsite
+# rst files normally shouldn't be checked in as they should be
+# dynamically built from notebooks
+doc/**/*.rst
+
+# evaluated .ipynb and json should only be checked in if the files 
+# take a long time to run or require large datsets. The following
+# do not meet those criteria so they should be ignored. 
+# NOTE: this will vary by project
+doc/*.ipynb
+doc/*.json
+doc/tutorial/*.ipynb
+doc/tutorial/*.json
+
 # this dir contains the whole website and should not be checked in on master
 builtdocs/
 
