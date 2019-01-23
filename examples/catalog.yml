@@ -167,7 +167,7 @@ sources:
         usecols: ['site', 'lat', 'lon', 'igbp']
       storage_options: {'anon': True}
 
-  puget_lidar:
+  seattle_lidar:
     driver: csv
     cache: 
       - argkey: urlpath
@@ -175,7 +175,7 @@ sources:
         type: compressed
         decomp: infer
     args:
-      urlpath: "https://s3.amazonaws.com/earth-data/puget-sound-lidar.zip"
+      urlpath: "https://s3.amazonaws.com/earth-data/seattle-lidar.zip"
       storage_options: {'anon': True}
     metadata:
       crs: State Plane Coordinate System Washington North FIPS 4601      
