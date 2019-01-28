@@ -12,14 +12,15 @@ dependencies:
   - pyviz/label/dev::geoviews ==1.6.0a2
   - pyviz/label/dev::holoviews ==1.11.0a10
   - pyviz/label/dev::hvplot ==0.3.0a5
-  - intake
-  - intake-xarray
+  - intake >=0.4.1
+  - intake-xarray >=0.3.0
   - numpy
   - pandas
   - pyviz/label/dev::panel ==0.2.0a8
   - rasterio
   - s3fs
   - scikit-learn
+  - scikit-image
   - tqdm
   - xarray
   - keras
