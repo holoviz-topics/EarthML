@@ -7,12 +7,9 @@ install:
   - "pip install pyctdev && doit miniconda_install && pip uninstall -y doit pyctdev"
   - "conda config --set always_yes True"
   - "conda info"
-  - "conda update conda"
-  - "conda update conda"
-  - "conda info"
   - "conda env update -f environment.yml -n earthml"
   - "conda env update -f environment-dev.yml -n earthml"
-  - "conda activate earthml"
+  - "activate earthml"
   - "doit env_capture"
 
 build: off
