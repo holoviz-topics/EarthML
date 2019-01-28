@@ -18,5 +18,6 @@ clone_depth: 5
 skip_tags: true
 
 test_script:
-  - "doit before_test"
+  - "doit small_data_setup"
   - "doit test_examples"
+  - "doit small_data_cleanup"
