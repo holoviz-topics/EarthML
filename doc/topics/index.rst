@@ -53,6 +53,14 @@ Contents:
       :scale: 30 %
       :alt: Unsupervised clustering of LANDSAT data
 
+* `Seattle Lidar <Seattle_Lidar.html>`_
+   Visualizing lidar data over the Seattle area.
+
+   .. figure:: ../_static/collage/lidar.png
+      :target: Seattle_Lidar.html
+      :scale: 30 %
+      :alt: Visualizing lidar data over the Seattle area
+
 
 .. toctree::
     :titlesonly:
@@ -64,3 +72,4 @@ Contents:
     Walker Lake <Walker_Lake>
     Image Classification <Image_Classification>
     Landsat Spectral Clustering <Landsat_Spectral_Clustering>
+    Seattle Lidar <Seattle_Lidar>

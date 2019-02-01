@@ -56,31 +56,37 @@ learning and related tasks in the Earth sciences, such as:
 
 .. raw:: html
 
-   <style>table {border-spacing: 15px} td { border: 1px solid black; vertical-align: top} </style>
-   <table>
-     <tr>
-       <td border=1>
-         <a href="topics/Carbon_Flux.html"><b>Carbon Flux</b></a><br>
-         <a href="topics/Carbon_Flux.html"><img src="_static/collage/carbon.png" /></a>
-       </td>
-       <td border=1>
-         <a href="topics/Heat_and_Trees.html"><b>Heat and Trees</b></a><br>
-         <a href="topics/Heat_and_Trees.html"><img src="_static/collage/trees.png" /></a>
-       </td>
-       <td border=1>
-         <a href="topics/Walker_Lake.html"><b>Walker Lake</b></a><br>
-         <a href="topics/Walker_Lake.html"><img src="_static/collage/walker.png" /></a>
-       </td>
-       <td border=1>
-         <a href="topics/Image_Classification.html"><b>Classification</b></a><br>
-         <a href="topics/Image_Classification.html"><img src="_static/collage/classifier.png" /></a>
-       </td>
-       <td border=1>
-         <a href="topics/Landsat_Spectral_Clustering.html"><b>Clustering</b></a><br>
-         <a href="topics/Landsat_Spectral_Clustering.html"><img src="_static/collage/cluster.png" /></a>
-       </td>
-     <tr>
-   </table>
+  <style>table {border-spacing: 15px} td { border: 1px solid black; vertical-align: top} </style>
+    <table>
+      <tr>
+        <td border=1>
+          <a href="topics/Carbon_Flux.html"><b>Carbon Flux</b></a><br>
+          <a href="topics/Carbon_Flux.html"><img src="_static/collage/carbon.png" /></a>
+        </td>
+        <td border=1>
+          <a href="topics/Heat_and_Trees.html"><b>Heat and Trees</b></a><br>
+          <a href="topics/Heat_and_Trees.html"><img src="_static/collage/trees.png" /></a>
+        </td>
+        <td border=1>
+          <a href="topics/Walker_Lake.html"><b>Walker Lake</b></a><br>
+          <a href="topics/Walker_Lake.html"><img src="_static/collage/walker.png" /></a>
+        </td>
+      </tr>
+      <tr>
+        <td border=1>
+          <a href="topics/Image_Classification.html"><b>Classification</b></a><br>
+          <a href="topics/Image_Classification.html"><img src="_static/collage/classifier.png" /></a>
+        </td>
+        <td border=1>
+          <a href="topics/Landsat_Spectral_Clustering.html"><b>Clustering</b></a><br>
+          <a href="topics/Landsat_Spectral_Clustering.html"><img src="_static/collage/cluster.png" /></a>
+        </td>
+        <td border=1>
+          <a href="topics/Seattle_Lidar.html"><b>Lidar</b></a><br>
+          <a href="topics/Seattle_Lidar.html"><img src="_static/collage/lidar.png" /></a>
+        </td>
+      <tr>
+    </table>
 
 Please feel free to report `issues
 <https://github.com/pyviz-topics/EarthML/issues>`_ or `contribute code
@@ -94,22 +100,26 @@ Installation
 Step 1: Install a `Miniconda <http://conda.pydata.org/miniconda.html>`_  (or `Anaconda <https://www.continuum.io/downloads>`_) environment
 ------------------------------------------------------------------------------------------------------------------------------------------
 
-Any Linux or Mac OS X computer with a modern web browser (preferably
-Google Chrome) should be suitable.  Windows machines can also run most
-of the functionality, but the EarthML team is currently (11/2018)
-investigating some Windows-specific issues.  16GB of RAM is required
+Any computer with a modern web browser (preferably
+Google Chrome) should be suitable. 16GB of RAM is required
 for some of the examples, but most will run fine in 4GB.
 
 If you don't already have conda on your machine, you can get it from
 `Anaconda.com <http://conda.pydata.org/miniconda.html>`_, and then open
 a terminal window.
 
-If you do have conda already, it's a good idea to update it (running it
-twice to get the very latest) to ensure you have the latest version::
+If you do have conda already, it's a good idea to update it.
+
+On Mac and Linux update to the latest version by updating
+twice using ::
 
    > conda update conda
    > conda update conda
 
+On Windows it is better to pin to a specific conda version to avoid a
+`bug <https://github.com/conda/conda/issues/8155>`_::
+
+   > conda update conda=4.5.4
 
 Step 2: Clone the EarthML git repository
 ----------------------------------------
