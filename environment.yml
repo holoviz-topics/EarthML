@@ -1,6 +1,7 @@
 name: earthml
 channels:
   - conda-forge
+  - nodefaults
 dependencies:
   - cartopy
   - colorcet
