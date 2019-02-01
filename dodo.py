@@ -85,8 +85,4 @@ def task_build_website():
     return {'actions':[
         "nbsite generate-rst --org pyviz-topics --project-name earthml --offset 1 --nblink=top",
         "nbsite build --what=html --output=builtdocs",
-        # The following commands will be part of the nbsite build cmd in nbsite >=0.5.2
-        'cp doc/*.json builtdocs/ 2>/dev/null || :',
-        'cp doc/topics/*.json builtdocs/topics/ 2>/dev/null || :',
-        'cp doc/tutorial/*.json builtdocs/tutorial/ 2>/dev/null || :',
     ]}

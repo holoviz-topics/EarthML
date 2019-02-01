@@ -26,7 +26,7 @@ a python command to replace entries in examples/data/catalog.yml with any
 found in examples/data/.data_stubs/test_catalog.yml:
 
 ```bash
-doit before_test
+doit small_data_setup
 ```
 
 > **NOTE:** After running that command you will notice that your catalog.yml
@@ -41,6 +41,12 @@ pytest --nbsmoke-run -k ".ipynb"
 ### Common Patterns
 
  - Run one test: `pytest --nbsmoke-run -k ".ipynb" -k "Walker_Lake" --ignore-nbsmoke-skip`
+
+Clean up the small data by running:
+
+```bash
+doit small_data_cleanup
+```
 
 ## Building the website
 The source material for the website is mostly in notebooks under examples.
