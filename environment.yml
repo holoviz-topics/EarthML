@@ -21,9 +21,9 @@ dependencies:
   - s3fs
   - scikit-image
   - scikit-learn
-  - scikit-image
   - tqdm
   - xarray
   - keras
+  - defaults::scipy
   - pip:
     - rio-toa
