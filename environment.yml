@@ -7,16 +7,16 @@ dependencies:
   - colorcet
   - dask
   - dask-ml
-  - pyviz/label/dev::datashader
+  - datashader ==0.6.9
   - geopandas
-  - pyviz/label/dev::geoviews ==1.6.0a2
-  - pyviz/label/dev::holoviews ==1.11.0a10
-  - pyviz/label/dev::hvplot ==0.3.0a5
+  - geoviews ==1.6.2
+  - holoviews ==1.11.2
+  - hvplot ==0.4.0
   - intake >=0.4.1
   - intake-xarray >=0.3.0
   - numpy
   - pandas
-  - pyviz/label/dev::panel ==0.2.0a8
+  - panel ==0.4.0
   - rasterio
   - s3fs
   - scikit-learn
