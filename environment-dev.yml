@@ -6,5 +6,5 @@ dependencies:
   - pyviz::pyctdev
   - pyviz::nbsmoke
   - pytest
-  - pyviz::nbsite==0.5.1
+  - pyviz::nbsite==0.5.2
   - pyviz::sphinx_ioam_theme

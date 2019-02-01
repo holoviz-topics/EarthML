@@ -42,9 +42,7 @@ jobs:
         - source activate earthml
         - doit env_capture
       script:
-        - doit small_data_setup
-        - doit test_examples
-        - doit small_data_cleanup
+        - doit test_all
 
     ########## DOCS ##########
 
