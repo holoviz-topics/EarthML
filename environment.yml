@@ -10,6 +10,7 @@ dependencies:
   - datashader ==0.6.9
   - geopandas
   - geoviews ==1.6.2
+  - graphviz
   - holoviews ==1.11.2
   - hvplot ==0.4.0
   - intake >=0.4.1
@@ -17,6 +18,7 @@ dependencies:
   - numpy
   - pandas
   - panel ==0.4.0
+  - python-graphviz
   - rasterio
   - s3fs
   - scikit-image
