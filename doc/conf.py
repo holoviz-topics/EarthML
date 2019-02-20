@@ -7,7 +7,7 @@ from nbsite.shared_conf import *
 
 project = u'EarthML'
 authors = u'Anaconda'
-copyright = u'2018 ' + authors
+copyright = u'2018-2019 ' + authors
 description = 'Python tools for earth science and machine learning'
 
 version = '0.0.1'
