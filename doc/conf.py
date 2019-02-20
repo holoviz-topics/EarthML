@@ -10,8 +10,7 @@ authors = u'Anaconda'
 copyright = u'2018-2019 ' + authors
 description = 'Python tools for earth science and machine learning'
 
-version = '0.0.1'
-release = '0.0.1'
+version = release = '0.2.1'
 
 nbbuild_cell_timeout = 10000
 

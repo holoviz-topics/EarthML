@@ -62,7 +62,7 @@ Contents:
       :alt: Visualizing lidar data over the Seattle area
 
 * `GrabCut <https://earthsim.pyviz.org/topics/index.html>`_
-   An example from the [EarthSim](http://earthsim.pyviz.org) project for using the GrabCut algorithm with OpenCV to extract a coastline from a satellite image.
+   An example from the `EarthSim <http://earthsim.pyviz.org>`_ project for using the GrabCut algorithm with OpenCV to extract a coastline from a satellite image.
 
 
 .. toctree::
