@@ -2,7 +2,9 @@
 Topics
 ******
 
-Examples of what can be done with EarthML.
+Examples of what can be done with EarthML. Each of these topics are
+available on `examples.pyviz.org <https://examples.pyviz.org>`_ as
+self-contained, reproducible projects.
 
 To learn how to use EarthML, see the `Tutorial
 <../tutorial/index.html>`_.
