@@ -39,6 +39,7 @@ html_context.update({
     'AUTHOR': authors,
     'WEBSITE_SERVER': 'https://pyviz-topics.github.io/EarthML/',
     'VERSION': version,
+    'GOOGLE_ANALYTICS_UA': 'UA-154795830-8',
     'NAV': _NAV,
     # by default, footer links are same as those in header
     'LINKS': _NAV,
