@@ -27,5 +27,6 @@ dependencies:
   - xarray
   - keras
   - defaults::scipy
+  - pyviz_comms ==0.7.0
   - pip:
     - rio-toa
