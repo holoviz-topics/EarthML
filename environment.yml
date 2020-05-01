@@ -27,5 +27,6 @@ dependencies:
   - xarray
   - keras
   - defaults::scipy
+  - pip
   - pip:
     - rio-toa
