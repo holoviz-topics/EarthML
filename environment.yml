@@ -23,5 +23,3 @@ dependencies:
   - intake-xarray
   - hvplot
   - s3fs
-  - pip:
-    - rio-toa
