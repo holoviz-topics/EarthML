@@ -38,8 +38,7 @@ jobs:
         - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
         - doit ecosystem_setup
       install:
-        - conda env remove -n earthml
-        - conda env create -f environment.yml
+        - travis_wait 60 doit env_create
         - source activate earthml
         - doit env_capture
       script:
