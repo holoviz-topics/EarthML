@@ -38,7 +38,7 @@ jobs:
         - export PATH="$HOME/miniconda/bin:$PATH" && hash -r
         - doit ecosystem_setup
       install:
-        - travis_wait 30 doit env_create
+        - doit env_create
         - source activate earthml
         - doit env_capture
       script:
