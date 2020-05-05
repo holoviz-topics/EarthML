@@ -36,8 +36,6 @@ jobs:
         - source activate earthml
         - pip install pyctdev
         - doit env_capture
-      script:
-        - doit test_all
 
     ########## DOCS ##########
 
