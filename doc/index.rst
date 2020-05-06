@@ -60,30 +60,30 @@ learning and related tasks in the Earth sciences, such as:
     <table>
       <tr>
         <td border=1>
-          <a href="topics/Carbon_Flux.html"><b>Carbon Flux</b></a><br>
-          <a href="topics/Carbon_Flux.html"><img src="_static/collage/carbon.png" /></a>
+          <a href="https://examples.pyviz.org/carbon_flux/"><b>Carbon Flux</b></a><br>
+          <a href="https://examples.pyviz.org/carbon_flux/"><img src="_static/collage/carbon.png" /></a>
         </td>
         <td border=1>
-          <a href="topics/Heat_and_Trees.html"><b>Heat and Trees</b></a><br>
-          <a href="topics/Heat_and_Trees.html"><img src="_static/collage/trees.png" /></a>
+          <a href="https://examples.pyviz.org/heat_and_trees/Heat_and_Trees.html"><b>Heat and Trees</b></a><br>
+          <a href="https://examples.pyviz.org/heat_and_trees/Heat_and_Trees.html"><img src="_static/collage/trees.png" /></a>
         </td>
         <td border=1>
-          <a href="topics/Walker_Lake.html"><b>Walker Lake</b></a><br>
-          <a href="topics/Walker_Lake.html"><img src="_static/collage/walker.png" /></a>
+          <a href="https://examples.pyviz.org/walker_lake/Walker_Lake.html"><b>Walker Lake</b></a><br>
+          <a href=""https://examples.pyviz.org/walker_lake/Walker_Lake.html"><img src="_static/collage/walker.png" /></a>
         </td>
       </tr>
       <tr>
         <td border=1>
-          <a href="topics/Image_Classification.html"><b>Classification</b></a><br>
-          <a href="topics/Image_Classification.html"><img src="_static/collage/classifier.png" /></a>
+          <a href="https://examples.pyviz.org/landuse_classification/Image_Classification.html"><b>Classification</b></a><br>
+          <a href="https://examples.pyviz.org/landuse_classification/Image_Classification.html"><img src="_static/collage/classifier.png" /></a>
         </td>
         <td border=1>
-          <a href="topics/Landsat_Spectral_Clustering.html"><b>Clustering</b></a><br>
-          <a href="topics/Landsat_Spectral_Clustering.html"><img src="_static/collage/cluster.png" /></a>
+          <a href="https://examples.pyviz.org/landsat_clustering/landuse_clustering.html"><b>Clustering</b></a><br>
+          <a href="https://examples.pyviz.org/landsat_clustering/landuse_clustering.html"><img src="_static/collage/cluster.png" /></a>
         </td>
         <td border=1>
-          <a href="topics/Seattle_Lidar.html"><b>Lidar</b></a><br>
-          <a href="topics/Seattle_Lidar.html"><img src="_static/collage/lidar.png" /></a>
+          <a href="https://examples.pyviz.org/seattle_lidar/Seattle_Lidar.html"><b>Lidar</b></a><br>
+          <a href="https://examples.pyviz.org/seattle_lidar/Seattle_Lidar.html"><img src="_static/collage/lidar.png" /></a>
         </td>
       <tr>
     </table>
@@ -93,59 +93,21 @@ Please feel free to report `issues
 <https://github.com/pyviz-topics/EarthML/>`_.
 
 
-------------
-Installation
-------------
+----------------------------
+Running the EarthML projects
+----------------------------
 
-Step 1: Install a `Miniconda <http://conda.pydata.org/miniconda.html>`_  (or `Anaconda <https://www.continuum.io/downloads>`_) environment
-------------------------------------------------------------------------------------------------------------------------------------------
+The EarthML topic examples are included among the many examples
+available on `examples.pyviz.org <https://examples.pyviz.org/>`_. Each
+project is encapsulated in a reproducible project that includes an
+environment specification, an optional `intake
+<https://intake.readthedocs.io/en/latest/>`_ data catalog as well as
+notebooks and any other necessary assets.
 
-Any computer with a modern web browser (preferably
-Google Chrome) should be suitable. 16GB of RAM is required
-for some of the examples, but most will run fine in 4GB.
-
-If you don't already have conda on your machine, you can get it from
-`Anaconda.com <http://conda.pydata.org/miniconda.html>`_, and then open
-a terminal window.
-
-If you do have conda already, it's a good idea to update it.
-
-On Mac and Linux update to the latest version by updating
-twice using ::
-
-   > conda update conda
-   > conda update conda
-
-On Windows it is better to pin to a specific conda version to avoid a
-`bug <https://github.com/conda/conda/issues/8155>`_::
-
-   > conda update conda=4.5.4
-
-Step 2: Clone the EarthML git repository
-----------------------------------------
-
-::
-
-   > git clone https://github.com/pyviz-topics/EarthML.git
-   > cd EarthML
-
-
-Step 3: Install and activate the ``earthml`` environment
---------------------------------------------------------
-
-::
-
-   > conda env create -f environment.yml
-   > conda activate earthml
-
-Step 4: Run the notebook server
--------------------------------
-
-::
-
-   > cd examples
-   > jupyter notebook
-
+Instructions for running these projects with `anaconda-project
+<https://github.com/Anaconda-Platform/anaconda-project>`_ in the
+`examples.pyviz User Guide
+<https://examples.pyviz.org/user_guide.html>`_
 
 .. raw:: html
 
