@@ -105,9 +105,9 @@ environment specification, an optional `intake
 notebooks and any other necessary assets.
 
 Instructions for running these projects with `anaconda-project
-<https://github.com/Anaconda-Platform/anaconda-project>`_ in the
-`examples.pyviz User Guide
-<https://examples.pyviz.org/user_guide.html>`_
+<https://github.com/Anaconda-Platform/anaconda-project>`_ can found in
+the `examples.pyviz User Guide
+<https://examples.pyviz.org/user_guide.html>`_.
 
 .. raw:: html
 
