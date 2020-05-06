@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8"/>
+<title>EarthML — EarthML 0.2.1 documentation</title>
+<meta content="Python tools for earth science and machine learning" name="description"/>
+<meta content="Anaconda" name="author"/>
+<!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+    WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="_static/css/main.css" rel="stylesheet"/>
+<link href="_static/nbsite.css" rel="stylesheet"/>
+<link href="_static/site.css" rel="stylesheet"/>
+<!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+</script>
+<script src="_static/js/main.js"></script>
+<script src="_static/nbsite.js"></script>
+<script src="_static/require.js"></script>
+<!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="_static/favicon.ico" rel="icon" type="image/png"/>
+<!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="/index.html" rel="canonical">
+</link></head>
+<body class="">
+<header class="navigation">
+<div class="wrapper">
+<a class="logo" href="#">
+<img alt="Logo" src="_static/logo.png"/>
+</a>
+<a class="navigation-menu logo-text" href="#">EarthML</a>
+<a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">Menu</a>
+<nav>
+<ul class="navigation-menu show" id="js-navigation-menu">
+<li class="nav-link doc-head"><a href="#">Introduction</a></li>
+<li class="nav-link doc-head"><a href="tutorial/index.html">Tutorial</a></li>
+<li class="nav-link doc-head"><a href="topics/index.html">Topics</a></li>
+<li class="nav-link doc-head"><a href="FAQ.html">FAQ</a></li>
+<li class="nav-link doc-head"><a href="about.html">About</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+<div class="docs section">
+<div id="hacketyhackhack"> <!-- style="width:20%;margin-right: 100px;"> --> <!--style="display: none;"> style="display:none;"> -->
+<div class="toc" style="width:15%; margin-right:20px;">
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topics/index.html">Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+</ul>
+</div>
+</div>
+<div class="content"> <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+<div class="section" id="earthml">
+<h1>EarthML<a class="headerlink" href="#earthml" title="Permalink to this headline">¶</a></h1>
+<div style="max-width: 1200; float:left"><p><strong>Machine learning and visualization in Python for Earth science</strong></p>
+<p>Python offers a wide variety of open-source libraries covering a huge
+range of functionality, but it can be difficult to work out which
+libraries are suitable for which tasks. The EarthML project helps to:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Demonstrate how to use Python tools for machine learning and analysis in the earth sciences</p></li>
+<li><p>Identify libraries suitable for working with earth-science data</p></li>
+<li><p>Make improvements to these libraries as needed to help improve earth-science workflows</p></li>
+</ul>
+</div></blockquote>
+<p>EarthML contains no code of its own, only tutorials and examples
+showing how to use packages like:</p>
+<ul class="simple">
+<li><p><strong>Data libraries:</strong></p>
+<ul>
+<li><p><a class="reference external" href="https://intake.readthedocs.io">Intake</a>: Cleanly loading data from various sources.</p></li>
+<li><p><a class="reference external" href="http://xarray.pydata.org">XArray</a>: Processing gridded (n-dimensional) data structures.</p></li>
+<li><p><a class="reference external" href="http://pandas.pydata.org">Pandas</a>: Processing columnar (tabular) data structures.</p></li>
+<li><p><a class="reference external" href="http://dask.pydata.org">Dask</a>: Parallelism and performance at scale.</p></li>
+</ul>
+</li>
+<li><p><strong>Visualization libraries:</strong></p>
+<ul>
+<li><p><a class="reference external" href="http://hvplot.pyviz.org">hvPlot</a>: Simple data-centric API for plotting, building on:</p>
+<ul>
+<li><p><a class="reference external" href="http://bokeh.pydata.org">Bokeh</a>: Interactive browser-based plotting.</p></li>
+<li><p><a class="reference external" href="http://holoviews.org">HoloViews</a>: Easy construction of Bokeh plots for datasets.</p></li>
+<li><p><a class="reference external" href="http://geoviews.org">GeoViews</a>: HoloViews with earth-specific projections.</p></li>
+<li><p><a class="reference external" href="https://github.com/bokeh/datashader">Datashader</a>: Rendering large datasets into images for display in browsers.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://panel.pyviz.org">Panel</a>: Dashboards, apps, and widgets for any library’s plots.</p></li>
+</ul>
+</li>
+<li><p><strong>Other tools:</strong></p>
+<ul>
+<li><p><a class="reference external" href="http://jupyter.org/">Jupyter</a>: Reproducible notebooks (source code for all examples on this site).</p></li>
+<li><p><a class="reference external" href="https://scitools.org.uk/cartopy">Cartopy</a>: Geographic coordinate reference systems.</p></li>
+<li><p><a class="reference external" href="http://dask.pydata.org">Dask</a>: Parallelism and performance at scale.</p></li>
+</ul>
+</li>
+<li><p><strong>ML tools: (representative only – use any you like!)</strong></p>
+<ul>
+<li><p><a class="reference external" href="https://scikit-learn.org">Scikit-learn</a>: General ML for numeric data.</p></li>
+<li><p><a class="reference external" href="https://keras.io">Keras</a>/ <a class="reference external" href="https://www.tensorflow.org">TensorFlow</a>/ <a class="reference external" href="https://pytorch.org">PyTorch</a>: Deep learning, images.</p></li>
+</ul>
+</li>
+</ul>
+<p>The EarthML <a class="reference external" href="tutorial">Tutorial</a> offers a general-purpose overview
+of the concepts and tools involved, and the <a class="reference external" href="topics">Topics</a> section
+shows examples of how these tools may be used to perform machine
+learning and related tasks in the Earth sciences, such as:</p>
+<style>table {border-spacing: 15px} td { border: 1px solid black; vertical-align: top} </style>
+<table>
+<tr>
+<td border="1">
+<a href="https://examples.pyviz.org/carbon_flux/"><b>Carbon Flux</b></a><br/>
+<a href="https://examples.pyviz.org/carbon_flux/"><img src="_static/collage/carbon.png"/></a>
+</td>
+<td border="1">
+<a href="https://examples.pyviz.org/heat_and_trees/Heat_and_Trees.html"><b>Heat and Trees</b></a><br/>
+<a href="https://examples.pyviz.org/heat_and_trees/Heat_and_Trees.html"><img src="_static/collage/trees.png"/></a>
+</td>
+<td border="1">
+<a href="https://examples.pyviz.org/walker_lake/Walker_Lake.html"><b>Walker Lake</b></a><br/>
+<a href="https://examples.pyviz.org/walker_lake/Walker_Lake.html"><img src="_static/collage/walker.png"/></a>
+</td>
+</tr>
+<tr>
+<td border="1">
+<a href="https://examples.pyviz.org/landuse_classification/Image_Classification.html"><b>Classification</b></a><br/>
+<a href="https://examples.pyviz.org/landuse_classification/Image_Classification.html"><img src="_static/collage/classifier.png"/></a>
+</td>
+<td border="1">
+<a href="https://examples.pyviz.org/landsat_clustering/landuse_clustering.html"><b>Clustering</b></a><br/>
+<a href="https://examples.pyviz.org/landsat_clustering/landuse_clustering.html"><img src="_static/collage/cluster.png"/></a>
+</td>
+<td border="1">
+<a href="https://examples.pyviz.org/seattle_lidar/Seattle_Lidar.html"><b>Lidar</b></a><br/>
+<a href="https://examples.pyviz.org/seattle_lidar/Seattle_Lidar.html"><img src="_static/collage/lidar.png"/></a>
+</td>
+<tr>
+</tr></tr></table><p>Please feel free to report <a class="reference external" href="https://github.com/pyviz-topics/EarthML/issues">issues</a> or <a class="reference external" href="https://github.com/pyviz-topics/EarthML/">contribute code</a>.</p>
+<div class="section" id="running-the-earthml-projects">
+<h2>Running the EarthML projects<a class="headerlink" href="#running-the-earthml-projects" title="Permalink to this headline">¶</a></h2>
+<p>The EarthML topic examples are included among the many examples
+available on <a class="reference external" href="https://examples.pyviz.org/">examples.pyviz.org</a>. Each
+project is encapsulated in a reproducible project that includes an
+environment specification, an optional <a class="reference external" href="https://intake.readthedocs.io/en/latest/">intake</a> data catalog as well as
+notebooks and any other necessary assets.</p>
+<p>Instructions for running these projects with <a class="reference external" href="https://github.com/Anaconda-Platform/anaconda-project">anaconda-project</a> can found in
+the <a class="reference external" href="https://examples.pyviz.org/user_guide.html">examples.pyviz User Guide</a>.</p>
+</div><div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- END MAIN BODY OF DOCS ––––––––––––– -->
+<footer class="footer">
+<div class="footer-links">
+<ul>
+<li><span class="footer-title">Links</span></li>
+<li><a href="#">Introduction</a></li>
+<li><a href="tutorial/index.html">Tutorial</a></li>
+<li><a href="topics/index.html">Topics</a></li>
+<li><a href="FAQ.html">FAQ</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+<ul>
+<li><span class="footer-title">Join Us</span></li>
+<li><a href="//github.com/pyviz-topics/EarthML">Github</a></li>
+</ul>
+<ul class="copyright">
+<li>2018-2019 Anaconda</li>
+</ul>
+</div>
+</footer>
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-154795830-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154795830-8');
+</script>
+<!-- MathJax Config -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

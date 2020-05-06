@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8"/>
+<title>Data Visualization — EarthML 0.2.1 documentation</title>
+<meta content="Python tools for earth science and machine learning" name="description"/>
+<meta content="Anaconda" name="author"/>
+<!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+    WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="../_static/css/main.css" rel="stylesheet"/>
+<link href="../_static/nbsite.css" rel="stylesheet"/>
+<link href="../_static/site.css" rel="stylesheet"/>
+<!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+</script>
+<script src="../_static/js/main.js"></script>
+<script src="../_static/nbsite.js"></script>
+<script src="../_static/require.js"></script>
+<!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="../_static/favicon.ico" rel="icon" type="image/png"/>
+<!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="/tutorial/Data_Visualization.html" rel="canonical">
+</link></head>
+<body class="">
+<header class="navigation">
+<div class="wrapper">
+<a class="logo" href="../index.html">
+<img alt="Logo" src="../_static/logo.png"/>
+</a>
+<a class="navigation-menu logo-text" href="../index.html">EarthML</a>
+<a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">Menu</a>
+<nav>
+<ul class="navigation-menu show" id="js-navigation-menu">
+<li class="nav-link doc-head"><a href="../index.html">Introduction</a></li>
+<li class="nav-link doc-head"><a href="index.html">Tutorial</a></li>
+<li class="nav-link doc-head"><a href="../topics/index.html">Topics</a></li>
+<li class="nav-link doc-head"><a href="../FAQ.html">FAQ</a></li>
+<li class="nav-link doc-head"><a href="../about.html">About</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+<div class="docs section">
+<div id="hacketyhackhack"> <!-- style="width:20%;margin-right: 100px;"> --> <!--style="display: none;"> style="display:none;"> -->
+<div class="toc" style="width:15%; margin-right:20px;">
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tutorial</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Data_Ingestion.html">Data Ingestion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction_to_Visualization.html">Introduction to Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Alignment_and_Preprocessing.html">Alignment and Preprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Machine_Learning.html">Machine Learning</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Data Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQ.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+</ul>
+</div>
+</div>
+<div class="content"> <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+<div class="section" id="data-visualization">
+<h1>Data Visualization<a class="headerlink" href="#data-visualization" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://raw.githubusercontent.com/pyviz-topics/earthml/master/examples/tutorial/05_Data_Visualization.ipynb">Right click to download this notebook from GitHub.</a></p>
+<hr class="docutils"/>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In order to gain insights into the structure of the training data as well as the quality of the machine learning output, it is important to be able to effectively visualize your data. Use of the appropriate visualizations can help ensure that your raw data has been processed correctly (as detailed in <a href="Alignment_and_Preprocessing.html">Alignment and Preprocessing</a>) and that the machine learning pipeline is resulting in the expected output (as described in <a href="Machine_Learning.html">Machine Learning</a>).</p>
+<p>For detailed examples, please see <a href="http://holoviz.org">holoviz.org</a>, particularly:</p>
+<ul>
+<li><a href="https://holoviz.org/tutorial/Overview.html">Overview</a></li>
+<li><a href="http://holoviews.org/user_guide/Gridded_Datasets.html">Gridded Datasets</a></li>
+<li><a href="http://geoviews.org/user_guide/index.html">The GeoViews User guide</a></li>
+<li><a href="https://holoviz.org/tutorial/Large_Data.html">Large Data</a></li>
+</ul>
+<p>And <a href="http://earthsim.holoviz.org">EarthSim.holoviz.org</a> for usage of drawing tools and calling hydrology simulators, plus <a href="http://datashader.org">Datashader.org</a> for working with large datasets and for geo-related toolboxes (NDVI, etc.).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- END MAIN BODY OF DOCS ––––––––––––– -->
+<footer class="footer">
+<div class="footer-links">
+<ul>
+<li><span class="footer-title">Links</span></li>
+<li><a href="../index.html">Introduction</a></li>
+<li><a href="index.html">Tutorial</a></li>
+<li><a href="../topics/index.html">Topics</a></li>
+<li><a href="../FAQ.html">FAQ</a></li>
+<li><a href="../about.html">About</a></li>
+</ul>
+<ul>
+<li><span class="footer-title">Join Us</span></li>
+<li><a href="//github.com/pyviz-topics/EarthML">Github</a></li>
+</ul>
+<ul class="copyright">
+<li>2018-2019 Anaconda</li>
+</ul>
+</div>
+</footer>
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-154795830-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154795830-8');
+</script>
+<!-- MathJax Config -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

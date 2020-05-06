@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8"/>
+<title>Tutorial — EarthML 0.2.1 documentation</title>
+<meta content="Python tools for earth science and machine learning" name="description"/>
+<meta content="Anaconda" name="author"/>
+<!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+    WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="../_static/css/main.css" rel="stylesheet"/>
+<link href="../_static/nbsite.css" rel="stylesheet"/>
+<link href="../_static/site.css" rel="stylesheet"/>
+<!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+</script>
+<script src="../_static/js/main.js"></script>
+<script src="../_static/nbsite.js"></script>
+<script src="../_static/require.js"></script>
+<!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="../_static/favicon.ico" rel="icon" type="image/png"/>
+<!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="/tutorial/index.html" rel="canonical">
+</link></head>
+<body class="">
+<header class="navigation">
+<div class="wrapper">
+<a class="logo" href="../index.html">
+<img alt="Logo" src="../_static/logo.png"/>
+</a>
+<a class="navigation-menu logo-text" href="../index.html">EarthML</a>
+<a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">Menu</a>
+<nav>
+<ul class="navigation-menu show" id="js-navigation-menu">
+<li class="nav-link doc-head"><a href="../index.html">Introduction</a></li>
+<li class="nav-link doc-head"><a href="#">Tutorial</a></li>
+<li class="nav-link doc-head"><a href="../topics/index.html">Topics</a></li>
+<li class="nav-link doc-head"><a href="../FAQ.html">FAQ</a></li>
+<li class="nav-link doc-head"><a href="../about.html">About</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+<div class="docs section">
+<div id="hacketyhackhack"> <!-- style="width:20%;margin-right: 100px;"> --> <!--style="display: none;"> style="display:none;"> -->
+<div class="toc" style="width:15%; margin-right:20px;">
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tutorial</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Data_Ingestion.html">Data Ingestion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Introduction_to_Visualization.html">Introduction to Visualization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Alignment_and_Preprocessing.html">Alignment and Preprocessing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Machine_Learning.html">Machine Learning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Data_Visualization.html">Data Visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/index.html">Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FAQ.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../about.html">About</a></li>
+</ul>
+</div>
+</div>
+<div class="content"> <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+<div class="section" id="tutorial">
+<h1>Tutorial<a class="headerlink" href="#tutorial" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://raw.githubusercontent.com/pyviz-topics/earthml/master/examples/tutorial/index.ipynb">Right click to download this notebook from GitHub.</a></p>
+<hr class="docutils"/>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The EarthML tutorial takes you through the various stages involved in using Python open-source tools to work with machine-learning and related data analysis tools for climate and other Earth science topics:</p>
+<ol>
+<li><a href="Data_Ingestion.html">Data Ingestion</a>: Loading large data sets efficiently with <a href="https://github.com/ContinuumIO/intake"><code>intake</code></a>.</li>
+<li><a href="Introduction_to_Visualization.html">Introduction to Visualization</a>: How to visualize data loaded into memory.</li>
+<li><a href="Alignment_and_Preprocessing.html">Alignment and Preprocessing</a>: How to prepare your data for the machine learning pipeline.</li>
+<li><a href="Machine_Learning.html">Machine Learning</a>: Specifying a <a href="http://scikit-learn.org/stable/index.html"><code>scikit-learn</code></a> pipeline to ingest the prepared training data.</li>
+<li><a href="Data_Visualization.html">Data Visualization</a>: How to visualize your data throughout the workflow, starting from data ingestion to the final machine learning product.</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Data_Ingestion.html">Data Ingestion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Introduction_to_Visualization.html">Introduction to Visualization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Alignment_and_Preprocessing.html">Alignment and Preprocessing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Machine_Learning.html">Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Data_Visualization.html">Data Visualization</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- END MAIN BODY OF DOCS ––––––––––––– -->
+<footer class="footer">
+<div class="footer-links">
+<ul>
+<li><span class="footer-title">Links</span></li>
+<li><a href="../index.html">Introduction</a></li>
+<li><a href="#">Tutorial</a></li>
+<li><a href="../topics/index.html">Topics</a></li>
+<li><a href="../FAQ.html">FAQ</a></li>
+<li><a href="../about.html">About</a></li>
+</ul>
+<ul>
+<li><span class="footer-title">Join Us</span></li>
+<li><a href="//github.com/pyviz-topics/EarthML">Github</a></li>
+</ul>
+<ul class="copyright">
+<li>2018-2019 Anaconda</li>
+</ul>
+</div>
+</footer>
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-154795830-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154795830-8');
+</script>
+<!-- MathJax Config -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

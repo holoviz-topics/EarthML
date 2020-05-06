@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8"/>
+<title>ai18 — EarthML 0.2.1 documentation</title>
+<meta content="Python tools for earth science and machine learning" name="description"/>
+<meta content="Anaconda" name="author"/>
+<!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+    WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="_static/css/main.css" rel="stylesheet"/>
+<link href="_static/nbsite.css" rel="stylesheet"/>
+<link href="_static/site.css" rel="stylesheet"/>
+<!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+</script>
+<script src="_static/js/main.js"></script>
+<script src="_static/nbsite.js"></script>
+<script src="_static/require.js"></script>
+<!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="_static/favicon.ico" rel="icon" type="image/png"/>
+<!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="/ai18.html" rel="canonical">
+</link></head>
+<body class="">
+<header class="navigation">
+<div class="wrapper">
+<a class="logo" href="index.html">
+<img alt="Logo" src="_static/logo.png"/>
+</a>
+<a class="navigation-menu logo-text" href="index.html">EarthML</a>
+<a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">Menu</a>
+<nav>
+<ul class="navigation-menu show" id="js-navigation-menu">
+<li class="nav-link doc-head"><a href="index.html">Introduction</a></li>
+<li class="nav-link doc-head"><a href="tutorial/index.html">Tutorial</a></li>
+<li class="nav-link doc-head"><a href="topics/index.html">Topics</a></li>
+<li class="nav-link doc-head"><a href="FAQ.html">FAQ</a></li>
+<li class="nav-link doc-head"><a href="about.html">About</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+<div class="docs section">
+<div id="hacketyhackhack"> <!-- style="width:20%;margin-right: 100px;"> --> <!--style="display: none;"> style="display:none;"> -->
+<div class="toc" style="width:15%; margin-right:20px;">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topics/index.html">Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+</ul>
+</div>
+</div>
+<div class="content"> <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+<div class="section" id="ai18">
+<h1>ai18<a class="headerlink" href="#ai18" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://raw.githubusercontent.com/pyviz-topics/earthml/master/examples/ai18.ipynb">Right click to download this notebook from GitHub.</a></p>
+<hr class="docutils"/>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Welcome-to-the-EarthML/PyViz-tutorial!">Welcome to the EarthML/PyViz tutorial!<a class="anchor-link" href="#Welcome-to-the-EarthML/PyViz-tutorial!">¶</a></h2><p>This tutorial will show you how to get started using general-purpose, open-source Python tools for machine learning, analysis, and visualization of earth-science data. Python offers a combination of convenience (many libraries already available, most things already done for you) with depth (anything can be customized, automated, optimized, and scaled up). The main downside of using Python is trying to navigate the huge and bewildering variety of tools available, and here we will guide you to a set of well-supported tools that enable a flexible, high-performance, scalable workflow.</p>
+<p>For machine learning, we focus on techniques that let you prepare earth-science data such as satellite images for processing by any of the various tools commonly used in Python, including scikit-learn and TensorFlow. We won't tell you what algorithm to run or what parameters to give it, but we'll show you how to get the data ready for you to make those choices in your particular application.</p>
+<p>Along the way, we will make sure that all of the data can easily be exposed, accessed, and visualized, using tools that provide:</p>
+<ul>
+<li>Full functionality in browsers (supporting local ore remote usage not tied to a desktop environment)</li>
+<li>Full interactivity (inside and out of plots)</li>
+<li>Specification in Python (not JavaScript, JSON, or other languages)</li>
+<li>Quick but fully customizable plots that minimize the need for coding</li>
+<li>Support for data of any size (really!)</li>
+<li>Free movement of your code between Jupyter notebooks, batch processing, and standalone web dashboards</li>
+</ul>
+<p>We'll be using a wide range of open-source Python libraries that support these goals, including the <a href="http://anaconda.com">Anaconda</a>-supported tools from the <a href="http://pyviz.org">PyViz</a> initiative:
+<a href="http://panel.pyviz.org">Panel</a>,
+<a href="http://holoviews.org">HoloViews</a>,
+<a href="http://geoviews.org">GeoViews</a>,
+<a href="https://bokeh.pydata.org">Bokeh</a>,
+<a href="http://datashader.org">Datashader</a>, 
+<a href="http://intake.readthedocs.io">Intake</a>, and 
+<a href="http://param.pyviz.org">Param</a>.  This material is all available for later study, at the <a href="http://earthml.pyviz.org">EarthML</a> website.</p>
+<p>This tutorial will take you through all of the steps involved in typical analysis and prediction workflows, from data ingestion to delivering a complete shareable web dashboard with the results.</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Index-and-Schedule">Index and Schedule<a class="anchor-link" href="#Index-and-Schedule">¶</a></h2><!-- Breakdown: 120 min, 60 min lunch, 180 min -->
+<ul>
+<li><p><em>Overview</em></p>
+<ul>
+<li><strong>15 min</strong>  <a href="http://earthml.pyviz.org">0 - Setup</a>: Setting up your system to run the tutorial.</li>
+<li>  <strong>0 min</strong>  <a href="topics/Carbon_Flux.html">Carbon Flux</a> : Example full Python workflow laying out all the steps <em>(assumed already viewed)</em><br/><br/><!-- Emphasize that the tools all support a huge range of data types, a huge range of processing steps, many ML algorithms, and many viz options -->
+<!-- Shortcuts, not dead ends --></li>
+</ul>
+</li>
+<li><p><em>Data ingestion</em></p>
+<ul>
+<li><strong>50 min</strong>  <a href="tutorial/Data_Ingestion.html">1 - Data Ingestion</a>: Loading data efficiently, whether local or remote, large or small.</li>
+<li><strong>15 min</strong>  <a href="tutorial/Introduction_to_Visualization.html">2 - Intro to Visualization</a>: Simple tools for visualizing geo and other data.</li>
+<li><strong>20 min</strong>  <a href="topics/Heat_and_Trees.html">Heat and Trees</a>: Analysis of how trees affect heat distribution in urban areas</li>
+<li><strong>20 min</strong>  <em>Questions and discussion</em></li>
+<li><strong>60 min</strong>  <em>Lunch break</em><br/><br/></li>
+</ul>
+</li>
+<li><p><em>Running ML or other analysis or simulation tools</em></p>
+<ul>
+<li><strong>30 min</strong>  <a href="tutorial/Machine_Learning.html">4 - Machine Learning</a>: Specifying an ML pipeline using the prepared training data.<!-- Use carbon flux with simple ML algorithm?  --> </li>
+<li><strong>20 min</strong>  <a href="topics/Landsat_Spectral_Clustering.html">LANDSAT Spectral Clustering</a>: Unsupervised clustering of LANDSAT data</li>
+<li><strong>30 min</strong>  <a href="topics/Image_Classification.html">Image Classification</a>: Supervised learning of satellite images using Keras+TensorFlow<br/><br/><!-- Other examples with tensorflow, keras, pytorch using CNN or some other algorithms? -->
+<!-- Interfacing to external code? -->
+<!-- http://ml.dask.org/ -->
+<!-- Cover Datashader here? --></li>
+</ul>
+</li>
+<li><p><em>Visualization and sharing</em></p>
+<ul>
+<li><strong>80 min</strong>  <a href="tutorial/Data_Visualization.html">5 - Visualization</a>: In-depth examples of visualization and misc topics<!-- Visualize every step; big data, small data, static, interactive, whatever, mentioning tile servers -->
+<!-- Demo EarthSim: Drawing tools/annotators,  Grabcut -->
+<!-- Datashader 8_Geography.ipynb? -->
+<!-- Briefly show off a few dashboards (Glaciers, Birds, etc.) --></li>
+<li><strong>20 min</strong>  <em>Questions and discussion</em></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- END MAIN BODY OF DOCS ––––––––––––– -->
+<footer class="footer">
+<div class="footer-links">
+<ul>
+<li><span class="footer-title">Links</span></li>
+<li><a href="index.html">Introduction</a></li>
+<li><a href="tutorial/index.html">Tutorial</a></li>
+<li><a href="topics/index.html">Topics</a></li>
+<li><a href="FAQ.html">FAQ</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+<ul>
+<li><span class="footer-title">Join Us</span></li>
+<li><a href="//github.com/pyviz-topics/EarthML">Github</a></li>
+</ul>
+<ul class="copyright">
+<li>2018-2019 Anaconda</li>
+</ul>
+</div>
+</footer>
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-154795830-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154795830-8');
+</script>
+<!-- MathJax Config -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

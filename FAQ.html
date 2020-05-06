@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8"/>
+<title>FAQ — EarthML 0.2.1 documentation</title>
+<meta content="Python tools for earth science and machine learning" name="description"/>
+<meta content="Anaconda" name="author"/>
+<!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+    WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="_static/css/main.css" rel="stylesheet"/>
+<link href="_static/nbsite.css" rel="stylesheet"/>
+<link href="_static/site.css" rel="stylesheet"/>
+<!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+</script>
+<script src="_static/js/main.js"></script>
+<script src="_static/nbsite.js"></script>
+<script src="_static/require.js"></script>
+<!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="_static/favicon.ico" rel="icon" type="image/png"/>
+<!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="/FAQ.html" rel="canonical">
+</link></head>
+<body class="">
+<header class="navigation">
+<div class="wrapper">
+<a class="logo" href="index.html">
+<img alt="Logo" src="_static/logo.png"/>
+</a>
+<a class="navigation-menu logo-text" href="index.html">EarthML</a>
+<a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">Menu</a>
+<nav>
+<ul class="navigation-menu show" id="js-navigation-menu">
+<li class="nav-link doc-head"><a href="index.html">Introduction</a></li>
+<li class="nav-link doc-head"><a href="tutorial/index.html">Tutorial</a></li>
+<li class="nav-link doc-head"><a href="topics/index.html">Topics</a></li>
+<li class="nav-link doc-head"><a href="#">FAQ</a></li>
+<li class="nav-link doc-head"><a href="about.html">About</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+<div class="docs section">
+<div id="hacketyhackhack"> <!-- style="width:20%;margin-right: 100px;"> --> <!--style="display: none;"> style="display:none;"> -->
+<div class="toc" style="width:15%; margin-right:20px;">
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="topics/index.html">Topics</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">FAQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-earthml-really">What is EarthML, really?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#who-runs-the-earthml-project">Who runs the EarthML project?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-packages-are-included">What packages are included?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#can-i-use-my-own-favorite-packages-with-earthml-tools-and-examples">Can I use my own favorite packages with EarthML tools and examples?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-can-i-adapt-an-earthml-example-to-my-own-purposes">How can I adapt an EarthML example to my own purposes?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-is-not-covered-well-by-earthml">What is <em>not</em> covered well by EarthML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-do-i-report-a-problem">How do I report a problem?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+</ul>
+</div>
+</div>
+<div class="content"> <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+<div class="section" id="faq">
+<h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<p>Questions we have been asked by users, plus potential pitfalls we hope to help users avoid:</p>
+<div class="section" id="what-is-earthml-really">
+<h2>What is EarthML, really?<a class="headerlink" href="#what-is-earthml-really" title="Permalink to this headline">¶</a></h2>
+<p>EarthML is a tutorial-based website that shows how to use open-source tools from the Python ecosystem to solve problems in earth science and climate science, focusing on machine learning and other automated analysis techniques.  To make it easy for you to run these tutorials and get started on your own projects, we also provide an environment specification for installing matching versions of these tools suitable for all the tasks covered in the tutorial.</p>
+<p>Along the way, the EarthML project has contributed a wide range of improvements to the available open-source packages, including Dask, Dask-ML, HoloViews, GeoViews, Intake, Panel, and Datashader.  You don’t have to do anything special to get these improvements; they are just part of the projects now. But you’ll benefit from them when you run any of the tutorials or you use these tools in your own work.</p>
+</div>
+<div class="section" id="who-runs-the-earthml-project">
+<h2>Who runs the EarthML project?<a class="headerlink" href="#who-runs-the-earthml-project" title="Permalink to this headline">¶</a></h2>
+<p>EarthML is supported by <a class="reference external" href="https://www.nasa.gov/goddard">NASA Goddard Space Flight Center</a> through a partnership with <a class="reference external" href="http://anaconda.com">Anaconda, Inc.</a>.</p>
+</div>
+<div class="section" id="what-packages-are-included">
+<h2>What packages are included?<a class="headerlink" href="#what-packages-are-included" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://github.com/pyviz-topics/EarthML/environment.yml">environment.yml</a> included with EarthML lists all the packages needed to run the tutorials and examples. These specific packages were included as the currently best available options satisfying the following criteria:
+- Fully open source
+- Fully scriptable for batch runs and remote HPC jobs
+- Fully scalable to large datasets and distributed or HPC systems, both for computation and for visualization
+- Fully Pythonic, without having to switch to other tools or languages (C/Fortran/JS/Scala/Java/Matlab/QGIS) to get things done
+- Fully interactive visualizations and custom applications
+- Simple entry points, with deep support for later customization and elaboration
+- Support for keeping the details of data sources and of visualization toolkits distinct from core domain-specific code</p>
+</div>
+<div class="section" id="can-i-use-my-own-favorite-packages-with-earthml-tools-and-examples">
+<h2>Can I use my own favorite packages with EarthML tools and examples?<a class="headerlink" href="#can-i-use-my-own-favorite-packages-with-earthml-tools-and-examples" title="Permalink to this headline">¶</a></h2>
+<p>Of course! You may have different goals, be working on different tasks, or simply have a different preference, and you are welcome to subsitute any library you prefer for any stage in the workflow. You just need to make sure that that library is compatible with the others in the EarthML environment and that you translate data to and from appropriate formats for each tool.</p>
+</div>
+<div class="section" id="how-can-i-adapt-an-earthml-example-to-my-own-purposes">
+<h2>How can I adapt an EarthML example to my own purposes?<a class="headerlink" href="#how-can-i-adapt-an-earthml-example-to-my-own-purposes" title="Permalink to this headline">¶</a></h2>
+<p>Once you have the example running in the <code class="docutils literal notranslate"><span class="pre">earthml</span></code> environment, you can look through the notebook to see which libraries it’s actually using out of that environment, and make your own <cite>environment.yml</cite> containing just those packages.  Once that reduced environment works for the example, you can then add any other packages you like to solve whatever problem you are working on.</p>
+</div>
+<div class="section" id="what-is-not-covered-well-by-earthml">
+<h2>What is <em>not</em> covered well by EarthML?<a class="headerlink" href="#what-is-not-covered-well-by-earthml" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>EarthML has no opinion about which tools or algorithms you use with your data – we show you how to get your data ready for ML and how to visualize and analyze the results, but what you do in the middle is entirely up to you!</p></li>
+<li><p>EarthML does not currently include any 3D plotting support, though we have <a class="reference external" href="https://anaconda.org/philippjfr/cesiumjs_backend">prototyped</a> some 3D support using <a class="reference external" href="https://cesiumjs.org">CesiumJS.</a></p></li>
+<li><p>It would be great to have more examples, both for using other ML libraries and for domain-specific tasks; contributions welcome!</p></li>
+</ul>
+</div>
+<div class="section" id="how-do-i-report-a-problem">
+<h2>How do I report a problem?<a class="headerlink" href="#how-do-i-report-a-problem" title="Permalink to this headline">¶</a></h2>
+<p>For the quickest response from those who can fix things, try to identify which package is most directly involved, and then file a GitHub issue on the site for that project (see <a class="reference external" href="http://pyviz.org">PyViz.org</a> for links to many of them).  If you can’t figure out which project is involved, or if your issue is with this website or the notebooks you downloaded from it, then please open an issue on <a class="reference external" href="https://github.com/pyviz-topics/EarthML/issues">github.com/pyviz-topics/EarthML</a> or chat with us on our <a class="reference external" href="http://discourse.holoviz.org/">HoloViz Discourse Forum</a></p>
+</div>
+</div>
+</div>
+</div>
+<!-- END MAIN BODY OF DOCS ––––––––––––– -->
+<footer class="footer">
+<div class="footer-links">
+<ul>
+<li><span class="footer-title">Links</span></li>
+<li><a href="index.html">Introduction</a></li>
+<li><a href="tutorial/index.html">Tutorial</a></li>
+<li><a href="topics/index.html">Topics</a></li>
+<li><a href="#">FAQ</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+<ul>
+<li><span class="footer-title">Join Us</span></li>
+<li><a href="//github.com/pyviz-topics/EarthML">Github</a></li>
+</ul>
+<ul class="copyright">
+<li>2018-2019 Anaconda</li>
+</ul>
+</div>
+</footer>
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-154795830-8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154795830-8');
+</script>
+<!-- MathJax Config -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
