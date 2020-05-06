@@ -69,7 +69,7 @@ learning and related tasks in the Earth sciences, such as:
         </td>
         <td border=1>
           <a href="https://examples.pyviz.org/walker_lake/Walker_Lake.html"><b>Walker Lake</b></a><br>
-          <a href=""https://examples.pyviz.org/walker_lake/Walker_Lake.html"><img src="_static/collage/walker.png" /></a>
+          <a href="https://examples.pyviz.org/walker_lake/Walker_Lake.html"><img src="_static/collage/walker.png" /></a>
         </td>
       </tr>
       <tr>

@@ -15,7 +15,7 @@ Contents:
    Visualizing and estimating carbon flux at sites using fluxnet data.
 
    .. figure:: ../_static/collage/carbon.png
-      :target: Carbon_Flux.html
+      :target: https://examples.pyviz.org/carbon_flux/
       :scale: 30 %
       :alt: Visualizing and estimating carbon flux at sites
 
@@ -24,7 +24,7 @@ Contents:
    Analysis of how trees affect heat distribution in urban areas.
 
    .. figure:: ../_static/collage/trees.png
-      :target: Heat_and_Trees.html
+      :target: https://examples.pyviz.org/heat_and_trees/Heat_and_Trees.html
       :scale: 30 %
       :alt: Analysis of how trees affect heat distribution
 
@@ -33,7 +33,7 @@ Contents:
    Visualizing the change in the NDVI over time for a great saline lake.
 
    .. figure:: ../_static/collage/walker.png
-      :target: Walker_Lake.html
+      :target: https://examples.pyviz.org/walker_lake/Walker_Lake.html
       :scale: 30 %
       :alt: Visualizing the change in the NDVI over time
 
@@ -42,7 +42,7 @@ Contents:
    Classifying satellite images using Keras+TensorFlow.
 
    .. figure:: ../_static/collage/classifier.png
-      :target: Image_Classification.html
+      :target: https://examples.pyviz.org/landuse_classification/Image_Classification.html
       :scale: 30 %
       :alt:  Classifying satellite images using Keras+TensorFlow.
 
@@ -51,7 +51,7 @@ Contents:
    Unsupervised clustering of LANDSAT data
 
    .. figure:: ../_static/collage/cluster.png
-      :target: Landsat_Spectral_Clustering.html
+      :target: https://examples.pyviz.org/landsat_clustering/landuse_clustering.html
       :scale: 30 %
       :alt: Unsupervised clustering of LANDSAT data
 
@@ -59,7 +59,7 @@ Contents:
    Visualizing lidar data over the Seattle area.
 
    .. figure:: ../_static/collage/lidar.png
-      :target: Seattle_Lidar.html
+      :target: https://examples.pyviz.org/seattle_lidar/Seattle_Lidar.html
       :scale: 30 %
       :alt: Visualizing lidar data over the Seattle area
 
