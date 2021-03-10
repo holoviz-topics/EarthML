@@ -11,7 +11,7 @@ To learn how to use EarthML, see the `Tutorial
 
 Contents:
 
-* `Carbon Flux <Carbon_Flux.html>`_
+* `Carbon Flux <https://examples.pyviz.org/carbon_flux/>`_
    Visualizing and estimating carbon flux at sites using fluxnet data.
 
    .. figure:: ../_static/collage/carbon.png
@@ -20,7 +20,7 @@ Contents:
       :alt: Visualizing and estimating carbon flux at sites
 
 
-* `Heat and Trees <Heat_and_Trees.html>`_
+* `Heat and Trees <https://examples.pyviz.org/heat_and_trees/Heat_and_Trees.html>`_
    Analysis of how trees affect heat distribution in urban areas.
 
    .. figure:: ../_static/collage/trees.png
@@ -29,7 +29,7 @@ Contents:
       :alt: Analysis of how trees affect heat distribution
 
 
-* `Walker Lake <Walker_Lake.html>`_
+* `Walker Lake <https://examples.pyviz.org/walker_lake/Walker_Lake.html>`_
    Visualizing the change in the NDVI over time for a great saline lake.
 
    .. figure:: ../_static/collage/walker.png
@@ -38,7 +38,7 @@ Contents:
       :alt: Visualizing the change in the NDVI over time
 
 
-* `Image Classification <Image_Classification.html>`_
+* `Image Classification <https://examples.pyviz.org/landuse_classification/Image_Classification.html>`_
    Classifying satellite images using Keras+TensorFlow.
 
    .. figure:: ../_static/collage/classifier.png
@@ -47,7 +47,7 @@ Contents:
       :alt:  Classifying satellite images using Keras+TensorFlow.
 
 
-* `Landsat Spectral Clusering <Landsat_Spectral_Clustering.html>`_
+* `Landsat Spectral Clusering <https://examples.pyviz.org/landsat_clustering/landuse_clustering.html>`_
    Unsupervised clustering of LANDSAT data
 
    .. figure:: ../_static/collage/cluster.png
@@ -55,7 +55,7 @@ Contents:
       :scale: 30 %
       :alt: Unsupervised clustering of LANDSAT data
 
-* `Seattle Lidar <Seattle_Lidar.html>`_
+* `Seattle Lidar <https://examples.pyviz.org/seattle_lidar/Seattle_Lidar.html>`_
    Visualizing lidar data over the Seattle area.
 
    .. figure:: ../_static/collage/lidar.png
