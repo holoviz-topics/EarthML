@@ -1,7 +1,6 @@
 name: earthml
 channels:
-  - conda-forge
-  - nodefaults
+  - defaults
 dependencies:
   - pyviz::pyctdev
   - pyviz::nbsmoke

@@ -10,15 +10,9 @@ sudo: false
 os:
   - linux
 
-cache:
-  timeout: 300
-  directories:
-    - $HOME/miniconda
-    - $HOME/.intake
-
 env:
   global:
-    - PYENV_VERSION=3.6
+    - PYENV_VERSION=3.7
 
 stages:
   - test
@@ -40,9 +34,8 @@ jobs:
       install:
         - doit env_create
         - source activate earthml
+        - pip install pyctdev
         - doit env_capture
-      script:
-        - doit test_all
 
     ########## DOCS ##########
 
@@ -54,6 +47,7 @@ jobs:
         - git checkout -b deploy-${TRAVIS_BRANCH}
         - git fetch https://github.com/$TRAVIS_REPO_SLUG.git evaluated:refs/remotes/evaluated # all large evaluated notebooks and their json files should be checked in to this branch
         - git checkout evaluated -- 'doc/topics/*.ipynb' 'doc/topics/*.json'  # only check in evaluated topics
+        - conda install -y "pyviz/label/dev::nbsite>=0.6.5" sphinx_holoviz_theme selenium phantomjs
       script: doit build_website
 
       deploy:
@@ -77,6 +71,7 @@ jobs:
         on:
           tags: true
           all_branches: true
+
 
 notifications:
   email: false

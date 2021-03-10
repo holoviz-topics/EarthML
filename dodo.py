@@ -30,8 +30,8 @@ def task_env_create():
     """Create environment from environment.yml and environment-dev.yml"""
     return {'actions': [
         "pip uninstall -y doit pyctdev",
-        "conda env update -f environment.yml -n earthml",
-        "conda env update -f environment-dev.yml -n earthml",
+        "conda env update -f environment.yml -n earthml"#,
+#        "conda env update -f environment-dev.yml -n earthml",
     ]}
 
 

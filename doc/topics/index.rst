@@ -2,62 +2,64 @@
 Topics
 ******
 
-Examples of what can be done with EarthML.
+Examples of what can be done with EarthML. Each of these topics are
+available on `examples.pyviz.org <https://examples.pyviz.org>`_ as
+self-contained, reproducible projects.
 
 To learn how to use EarthML, see the `Tutorial
 <../tutorial/index.html>`_.
 
 Contents:
 
-* `Carbon Flux <Carbon_Flux.html>`_
+* `Carbon Flux <https://examples.pyviz.org/carbon_flux/>`_
    Visualizing and estimating carbon flux at sites using fluxnet data.
 
    .. figure:: ../_static/collage/carbon.png
-      :target: Carbon_Flux.html
+      :target: https://examples.pyviz.org/carbon_flux/
       :scale: 30 %
       :alt: Visualizing and estimating carbon flux at sites
 
 
-* `Heat and Trees <Heat_and_Trees.html>`_
+* `Heat and Trees <https://examples.pyviz.org/heat_and_trees/Heat_and_Trees.html>`_
    Analysis of how trees affect heat distribution in urban areas.
 
    .. figure:: ../_static/collage/trees.png
-      :target: Heat_and_Trees.html
+      :target: https://examples.pyviz.org/heat_and_trees/Heat_and_Trees.html
       :scale: 30 %
       :alt: Analysis of how trees affect heat distribution
 
 
-* `Walker Lake <Walker_Lake.html>`_
+* `Walker Lake <https://examples.pyviz.org/walker_lake/Walker_Lake.html>`_
    Visualizing the change in the NDVI over time for a great saline lake.
 
    .. figure:: ../_static/collage/walker.png
-      :target: Walker_Lake.html
+      :target: https://examples.pyviz.org/walker_lake/Walker_Lake.html
       :scale: 30 %
       :alt: Visualizing the change in the NDVI over time
 
 
-* `Image Classification <Image_Classification.html>`_
+* `Image Classification <https://examples.pyviz.org/landuse_classification/Image_Classification.html>`_
    Classifying satellite images using Keras+TensorFlow.
 
    .. figure:: ../_static/collage/classifier.png
-      :target: Image_Classification.html
+      :target: https://examples.pyviz.org/landuse_classification/Image_Classification.html
       :scale: 30 %
       :alt:  Classifying satellite images using Keras+TensorFlow.
 
 
-* `Landsat Spectral Clusering <Landsat_Spectral_Clustering.html>`_
+* `Landsat Spectral Clusering <https://examples.pyviz.org/landsat_clustering/landuse_clustering.html>`_
    Unsupervised clustering of LANDSAT data
 
    .. figure:: ../_static/collage/cluster.png
-      :target: Landsat_Spectral_Clustering.html
+      :target: https://examples.pyviz.org/landsat_clustering/landuse_clustering.html
       :scale: 30 %
       :alt: Unsupervised clustering of LANDSAT data
 
-* `Seattle Lidar <Seattle_Lidar.html>`_
+* `Seattle Lidar <https://examples.pyviz.org/seattle_lidar/Seattle_Lidar.html>`_
    Visualizing lidar data over the Seattle area.
 
    .. figure:: ../_static/collage/lidar.png
-      :target: Seattle_Lidar.html
+      :target: https://examples.pyviz.org/seattle_lidar/Seattle_Lidar.html
       :scale: 30 %
       :alt: Visualizing lidar data over the Seattle area
 
