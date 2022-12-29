@@ -113,7 +113,7 @@ earthml/.version
 doc/**/*.rst
 doc/**/*.ipynb
 doc/**/*.json
-# this dir contains the whole website and should not be checked in on master
+# this dir contains the whole website and should not be checked in on main
 builtdocs/
 
 # dask
