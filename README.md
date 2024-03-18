@@ -1,3 +1,9 @@
+> # ⚠️ <strong>IMPORTANT NOTICE</strong> ⚠️<br>
+> <span style="color: #d32f2f;">This site is <strong>ARCHIVED</strong> and will <strong>NO LONGER BE UPDATED</strong>.</span><br>
+> For updated Tutorial material, please visit the <a href="https://projectpythia.org/landsat-ml-cookbook/README.html" style="color: #812fd3;">Pythia landsat-ml cookbook</a>.<br>
+> For Topic Examples, head over to the <a href="https://examples.holoviz.org/" style="color: #812fd3;">HoloViz Examples</a> website.
+
+
 # EarthML
 
 **Machine learning and visualization in Python for Earth science**
